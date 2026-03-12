@@ -1,20 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
 <meta charset="UTF-8">
-<title>VBS - Tecnologia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VBS Tecnologia</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#020617;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size:15px;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
+}
+
+.hero h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+opacity:0.9;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 25px;
+background:white;
+color:#1e3a8a;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+}
+
+section{
+padding:80px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.downloads{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.card{
+background:#020617;
+padding:25px;
+border-radius:10px;
+width:250px;
+text-align:center;
+}
+
+.card a{
+display:inline-block;
+margin-top:10px;
+background:#0ea5e9;
+padding:10px 20px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#020617;
+margin-top:40px;
+font-size:14px;
+opacity:0.7;
+}
+
+</style>
+
 </head>
 
 <body>
 
+<header>
+
+<div class="logo">VBS Tecnologia</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#sobre">Sobre</a>
+<a href="#downloads">Downloads</a>
+<a href="#contato">Contato</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
 <h1>VBS Tecnologia</h1>
+<p>Soluções tecnológicas e desenvolvimento de software</p>
 
-<p>Bem-vindo ao site oficial da VBS.</p>
+<a class="btn" href="#downloads">Baixar Software</a>
 
-<p>Contato: contato@empresa.com</p>
+</section>
 
-<a href="downloads/software.zip">Baixar software</a>
+<section id="sobre">
+
+<h2>Sobre a Empresa</h2>
+
+<p style="text-align:center; max-width:700px; margin:auto;">
+A VBS Tecnologia desenvolve soluções digitais, softwares e ferramentas
+para automação e inovação tecnológica.
+Nosso objetivo é criar tecnologias eficientes, acessíveis e modernas.
+</p>
+
+</section>
+
+<section id="downloads">
+
+<h2>Downloads</h2>
+
+<div class="downloads">
+
+<div class="card">
+<h3>Software VBS</h3>
+<p>Versão 1.0</p>
+<a href="downloads/software.zip">Download</a>
+</div>
+
+<div class="card">
+<h3>Manual</h3>
+<p>Documentação</p>
+<a href="downloads/manual.pdf">Download</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="contato">
+
+<h2>Contato</h2>
+
+<p style="text-align:center;">
+Email: contato@vbs.com<br>
+Suporte: suporte@vbs.com
+</p>
+
+</section>
+
+<footer>
+
+© 2026 VBS Tecnologia
+
+</footer>
 
 </body>
 
