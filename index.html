@@ -3,106 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VBS Soluções | Elétrica e Segurança</title>
+    <title>VBS Soluções | Engenharia e Segurança</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
             --azul-brand: #002855;
             --azul-claro: #79C2D0;
-            --cinza-fundo: #f4f7f6;
             --branco: #ffffff;
+            --cinza-fundo: #f0f4f8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background: var(--cinza-fundo); color: #333; line-height: 1.6; }
+        
+        /* BACKGROUND DA PÁGINA COM PADRÃO SUTIL */
+        body { 
+            background-color: var(--cinza-fundo);
+            background-image: radial-gradient(#cfd8dc 0.5px, transparent 0.5px);
+            background-size: 20px 20px; /* Pontilhado elegante para preencher espaços */
+            color: #333; 
+            line-height: 1.6; 
+        }
 
-        /* --- MENU COM COR (AJUSTADO) --- */
+        /* --- MENU REESTRUTURADO --- */
         header { 
-            background: var(--azul-brand); /* Agora o menu tem a cor da marca */
+            background: rgba(0, 40, 85, 0.95); /* Azul profundo com leve transparência */
+            backdrop-filter: blur(5px);
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 15px 8%; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+            padding: 10px 8%; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            border-bottom: 2px solid var(--azul-claro);
         }
-        .logo-menu img { height: 50px; width: auto; filter: brightness(0) invert(1); } /* Logo branca para fundo escuro */
-        nav { display: flex; }
-        nav a { text-decoration: none; color: var(--branco); font-weight: 600; padding: 10px 18px; text-transform: uppercase; font-size: 13px; transition: 0.3s; }
-        nav a:hover { color: var(--azul-claro); }
+        .logo-menu img { height: 45px; width: auto; filter: brightness(0) invert(1); }
+        
+        nav { display: flex; gap: 10px; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--branco); 
+            font-weight: 400; 
+            padding: 10px 15px; 
+            text-transform: uppercase; 
+            font-size: 12px; 
+            transition: 0.3s;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+        nav a:hover { background: rgba(255,255,255,0.1); color: var(--azul-claro); }
+        nav a.active { border-bottom: 2px solid var(--azul-claro); font-weight: 700; }
 
         /* --- HERO SECTION --- */
         .hero { 
-            background: linear-gradient(rgba(0,40,85,0.7), rgba(0,40,85,0.7)), url('https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=2000'); 
+            background: linear-gradient(rgba(0,40,85,0.75), rgba(0,40,85,0.75)), url('https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=2000'); 
             background-size: cover; 
             background-position: center;
             color: var(--branco);
-            padding: 120px 20px;
+            padding: 140px 20px;
             text-align: center;
         }
-        /* NOVA FRASE DE IMPACTO */
-        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; }
-        .hero p { font-size: 1.3rem; margin-bottom: 35px; opacity: 0.9; font-weight: 400; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 40px; font-weight: 300; max-width: 800px; margin-left: auto; margin-right: auto; }
 
         .btn-principal { 
             background: var(--azul-claro); 
             color: white; 
-            padding: 18px 45px; 
-            border-radius: 5px; 
+            padding: 18px 50px; 
+            border-radius: 3px; 
             text-decoration: none; 
             font-weight: 700; 
-            transition: 0.3s; 
+            transition: 0.4s; 
             display: inline-block;
             text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-        .btn-principal:hover { background: #5eaebc; transform: translateY(-3px); }
+        .btn-principal:hover { background: var(--branco); color: var(--azul-brand); transform: scale(1.05); }
 
-        /* --- DIFERENCIAIS --- */
+        /* --- CARDS DE DIFERENCIAIS --- */
         .features { 
             display: flex; 
             justify-content: center; 
-            gap: 25px; 
-            margin: -60px auto 60px; 
+            gap: 30px; 
+            margin: -70px auto 60px; 
             padding: 0 20px; 
             max-width: 1200px; 
-            position: relative;
         }
         .feature-item { 
             background: var(--branco); 
-            padding: 40px 30px; 
-            border-radius: 8px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            padding: 45px 35px; 
+            border-radius: 4px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
             flex: 1; 
             text-align: center; 
-            border-top: 5px solid var(--azul-claro);
+            transition: 0.3s;
         }
-        .feature-item i { font-size: 40px; color: var(--azul-brand); margin-bottom: 20px; display: block; }
-        .feature-item h3 { color: var(--azul-brand); margin-bottom: 12px; }
-        .feature-item p { font-size: 0.95rem; color: #666; }
+        .feature-item:hover { transform: translateY(-5px); }
+        .feature-item i { font-size: 45px; color: var(--azul-claro); margin-bottom: 20px; }
+        .feature-item h3 { color: var(--azul-brand); margin-bottom: 15px; font-size: 1.1rem; }
+        .feature-item p { font-size: 0.9rem; color: #666; font-weight: 400; }
 
-        /* --- SERVIÇOS --- */
-        .servicos-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .servicos-section h2 { margin-bottom: 50px; color: var(--azul-brand); font-size: 2.2rem; }
+        /* --- SEÇÃO DE SERVIÇOS --- */
+        .servicos-section { padding: 60px 20px 100px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .servicos-section h2 { margin-bottom: 50px; color: var(--azul-brand); font-size: 2rem; font-weight: 800; }
         
-        .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        .card-servico { text-align: left; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .card-servico img { width: 100%; height: 250px; object-fit: cover; }
-        .card-content { padding: 30px; }
-        .card-content h3 { color: var(--azul-brand); margin-bottom: 15px; }
-        .link-detalhes { color: var(--azul-claro); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px; }
+        .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .card-servico { text-align: left; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.05); border: 1px solid #e0e6ed; }
+        .card-servico img { width: 100%; height: 280px; object-fit: cover; filter: grayscale(20%); transition: 0.5s; }
+        .card-servico:hover img { filter: grayscale(0%); }
+        .card-content { padding: 35px; }
+        .card-content h3 { color: var(--azul-brand); margin-bottom: 15px; font-weight: 700; }
+        .card-content p { color: #555; font-weight: 400; }
+        .link-detalhes { color: var(--azul-claro); font-weight: 700; text-decoration: none; display: inline-block; margin-top: 20px; border-bottom: 2px solid transparent; transition: 0.3s; }
+        .link-detalhes:hover { border-bottom: 2px solid var(--azul-claro); }
 
-        footer { background: var(--azul-brand); color: white; padding: 60px 20px; text-align: center; }
+        /* --- FOOTER ATUALIZADO --- */
+        footer { background: var(--azul-brand); color: white; padding: 70px 20px; text-align: center; }
+        .horarios { margin: 30px 0; background: rgba(255,255,255,0.05); display: inline-block; padding: 20px 40px; border-radius: 4px; }
+        .horarios p { font-size: 0.9rem; opacity: 0.9; }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .features { flex-direction: column; margin-top: 20px; }
-            .hero h1 { font-size: 2rem; }
-            header { flex-direction: column; padding: 20px; }
-            nav { margin-top: 15px; }
+            .grid-servicos { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            nav a { font-size: 10px; padding: 10px 8px; }
         }
     </style>
 </head>
@@ -113,34 +141,35 @@
             <img src="img/logo.png" alt="VBS Soluções">
         </div>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="produtos.html">Produtos</a>
             <a href="contato.html">Contato</a>
+            <a href="download.html">Download</a>
             <a href="sobre.html">Sobre</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Potencializando sua energia, protegendo seu patrimônio.</h1>
-        <p>Referência em engenharia elétrica e sistemas avançados de segurança.</p>
-        <a href="contato.html" class="btn-principal">Solicitar Orçamento Grátis</a>
+        <h1>Conectando precisão técnica à sua segurança total.</h1>
+        <p>Soluções de alta performance em engenharia elétrica e proteção eletrônica para quem exige confiança absoluta.</p>
+        <a href="contato.html" class="btn-principal">Fale com um Especialista</a>
     </section>
 
     <div class="features">
         <div class="feature-item">
-            <i class="fa-solid fa-user-shield"></i>
+            <i class="fa-solid fa-microchip"></i>
             <h3>Técnicos Certificados</h3>
-            <p>Mão de obra qualificada seguindo rigorosamente as normas técnicas (NR10).</p>
+            <p>Mão de obra qualificada operando rigorosamente sob as normas NR10 e normas técnicas vigentes.</p>
         </div>
         <div class="feature-item">
-            <i class="fa-solid fa-briefcase"></i>
+            <i class="fa-solid fa-headset"></i>
             <h3>Suporte Especializado</h3>
-            <p>Atendimento ágil e consultoria técnica em horário comercial.</p>
+            <p>Consultoria técnica e pronto atendimento disponíveis em horário comercial.</p>
         </div>
         <div class="feature-item">
-            <i class="fa-solid fa-check-double"></i>
-            <h3>Garantia e Qualidade</h3>
-            <p>Trabalhamos apenas com as melhores marcas do mercado mundial.</p>
+            <i class="fa-solid fa-award"></i>
+            <h3>Garantia de Qualidade</h3>
+            <p>Utilizamos exclusivamente tecnologias das marcas líderes do mercado global.</p>
         </div>
     </div>
 
@@ -151,8 +180,8 @@
                 <img src="https://images.unsplash.com/photo-1621905231291-007412f0cc13?q=80&w=800" alt="Engenharia Elétrica">
                 <div class="card-content">
                     <h3>Engenharia Elétrica</h3>
-                    <p>Instalações industriais, quadros de comando e manutenção preventiva para empresas e condomínios.</p>
-                    <a href="produtos.html" class="link-detalhes">Conheça nossos serviços →</a>
+                    <p>Projetos de infraestrutura, quadros de comando, manutenções preventivas e instalações de alto padrão para condomínios e indústrias.</p>
+                    <a href="produtos.html" class="link-detalhes">Ver especificações técnicas →</a>
                 </div>
             </div>
 
@@ -160,21 +189,24 @@
                 <img src="https://images.unsplash.com/photo-1557597774-9d2739f85a94?q=80&w=800" alt="Segurança Eletrônica">
                 <div class="card-content">
                     <h3>Segurança Eletrônica</h3>
-                    <p>Projetos integrados de CFTV, alarmes e gerenciamento completo via <strong>Acesso Remoto</strong>.</p>
-                    <a href="produtos.html" class="link-detalhes">Conheça nossos serviços →</a>
+                    <p>Sistemas avançados de CFTV IP, alarmes monitorados e cercas elétricas com gerenciamento via acesso remoto.</p>
+                    <a href="produtos.html" class="link-detalhes">Ver especificações técnicas →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p style="font-size: 1.4rem; margin-bottom: 10px; letter-spacing: 2px;"><strong>VBS SOLUÇÕES</strong></p>
-        <p>Engenharia Elétrica e Segurança Eletrônica</p>
-        <div style="margin: 25px 0; opacity: 0.7;">
-            <p>Atendimento: Segunda a Sexta, das 08h às 18h</p>
-            <p>contato@vbssolucoes.com.br</p>
+        <p style="font-size: 1.5rem; margin-bottom: 5px; font-weight: 800; letter-spacing: 3px;">VBS SOLUÇÕES</p>
+        <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--azul-claro);">Engenharia Elétrica e Segurança Eletrônica</p>
+        
+        <div class="horarios">
+            <p><strong>Horário de Atendimento:</strong></p>
+            <p>Segunda a Sexta: 07:30 às 11:00 — 13:30 às 17:30</p>
         </div>
-        <p style="opacity: 0.4; font-size: 0.7rem;">&copy; 2026 VBS Soluções - Todos os direitos reservados.</p>
+        
+        <p style="margin-top: 10px;">contato@vbssolucoes.com.br</p>
+        <p style="opacity: 0.3; font-size: 0.65rem; margin-top: 40px;">&copy; 2026 VBS Soluções - Todos os direitos reservados.</p>
     </footer>
 
 </body>
