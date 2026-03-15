@@ -9,30 +9,33 @@
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#dcdcdc;
 overflow-x:hidden;
-background:#e5e5e5;
 }
 
 /* HEXAGONOS */
 
-.hex{
+.hex-bg{
 
 position:absolute;
-top:60px;
+top:70px;
 left:0;
 width:100%;
-height:260px;
+height:180px;
 
 background:
-linear-gradient(30deg,#d8d8d8 12%,transparent 12.5%,transparent 87%,#d8d8d8 87.5%,#d8d8d8),
-linear-gradient(150deg,#d8d8d8 12%,transparent 12.5%,transparent 87%,#d8d8d8 87.5%,#d8d8d8),
-linear-gradient(30deg,#d8d8d8 12%,transparent 12.5%,transparent 87%,#d8d8d8 87.5%,#d8d8d8),
-linear-gradient(150deg,#d8d8d8 12%,transparent 12.5%,transparent 87%,#d8d8d8 87.5%,#d8d8d8),
-linear-gradient(60deg,#ececec 25%,transparent 25.5%,transparent 75%,#ececec 75%,#ececec),
-linear-gradient(60deg,#ececec 25%,transparent 25.5%,transparent 75%,#ececec 75%,#ececec);
+linear-gradient(30deg,#d0d0d0 12%,transparent 12.5%,transparent 87%,#d0d0d0 87.5%,#d0d0d0),
+linear-gradient(150deg,#d0d0d0 12%,transparent 12.5%,transparent 87%,#d0d0d0 87.5%,#d0d0d0),
+linear-gradient(30deg,#d0d0d0 12%,transparent 12.5%,transparent 87%,#d0d0d0 87.5%,#d0d0d0),
+linear-gradient(150deg,#d0d0d0 12%,transparent 12.5%,transparent 87%,#d0d0d0 87.5%,#d0d0d0);
 
 background-size:80px 140px;
 
@@ -40,23 +43,22 @@ background-position:
 0 0,
 0 0,
 40px 70px,
-40px 70px,
-0 0,
 40px 70px;
 
 z-index:0;
 
 }
 
-/* MENU SUPERIOR */
+/* MENU */
 
 header{
 
-background:linear-gradient(90deg,#8ad0d6,#4da9bf);
+background:linear-gradient(90deg,#7fc5cc,#4fa5ba);
 
-padding:18px;
+height:70px;
 
 display:flex;
+align-items:center;
 justify-content:center;
 
 position:relative;
@@ -64,94 +66,102 @@ z-index:5;
 
 }
 
+/* remove qualquer linha estranha */
+
+header::after{
+display:none;
+}
+
 nav a{
 
 color:white;
 text-decoration:none;
-
 margin:0 30px;
-
 font-weight:bold;
-
 letter-spacing:1px;
-
+padding:10px 5px;
 position:relative;
 
 }
 
-nav a::after{
+/* indicador de menu ativo */
+
+nav a.active::after{
 
 content:"";
+
 position:absolute;
-width:0%;
-height:2px;
-background:white;
+
 left:0;
-bottom:-5px;
-transition:0.3s;
-
-}
-
-nav a:hover::after{
+bottom:-8px;
 
 width:100%;
+height:3px;
+
+background:white;
+border-radius:2px;
 
 }
 
-/* AREA HERO */
+/* hover suave */
+
+nav a:hover{
+
+opacity:0.85;
+
+}
+
+/* HERO */
 
 .hero{
 
 position:relative;
-
-height:380px;
+height:320px;
 
 display:flex;
-
 justify-content:center;
+align-items:flex-start;
 
-align-items:center;
+padding-top:60px;
 
 }
 
-/* FORMA AZUL */
+/* AREA AZUL */
 
-.blue{
+.blue-area{
 
 position:absolute;
 
-bottom:-60px;
+top:120px;
 left:0;
 
 width:100%;
-height:260px;
+height:220px;
 
-background:linear-gradient(#79c6d3,#5aaec2);
+background:linear-gradient(#6fb8c6,#5ca8b9);
 
-border-top-left-radius:120px;
-border-top-right-radius:200px;
-
-filter:blur(1px);
+border-top-right-radius:140px;
+border-top-left-radius:40px;
 
 z-index:1;
 
 }
 
-/* CAIXA LOGO */
+/* LOGO */
 
 .logo-box{
 
 position:relative;
 
-background:rgba(255,255,255,0.65);
+background:rgba(255,255,255,0.6);
 
-backdrop-filter:blur(14px);
+backdrop-filter:blur(12px);
 
-padding:40px 70px;
+padding:45px 80px;
 
 border-radius:20px;
 
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
 
 text-align:center;
 
@@ -161,15 +171,14 @@ z-index:3;
 
 .logo-box img{
 
-width:220px;
+width:280px; /* maior */
 
 }
 
 .logo-box h2{
 
 margin-top:15px;
-
-color:#083a52;
+color:#123d4d;
 
 }
 
@@ -177,37 +186,31 @@ color:#083a52;
 
 .cards{
 
-margin-top:160px;
+margin-top:140px;
 
 display:flex;
-
 justify-content:center;
-
 gap:40px;
-
-flex-wrap:wrap;
-
-padding-bottom:120px;
 
 }
 
 .card{
 
-width:280px;
+width:320px;
 
 background:rgba(255,255,255,0.35);
 
-backdrop-filter:blur(8px);
+backdrop-filter:blur(10px);
 
 border-radius:20px;
 
-padding:35px;
+padding:40px;
 
 text-align:center;
 
 color:white;
 
-box-shadow:0 15px 30px rgba(0,0,0,0.15);
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
 }
 
@@ -221,7 +224,7 @@ box-shadow:0 15px 30px rgba(0,0,0,0.15);
 
 <nav>
 
-<a href="#">HOME</a>
+<a class="active" href="#">HOME</a>
 <a href="#">PRODUTOS</a>
 <a href="#">CONTATO</a>
 <a href="#">DOWNLOAD</a>
@@ -231,7 +234,7 @@ box-shadow:0 15px 30px rgba(0,0,0,0.15);
 
 </header>
 
-<div class="hex"></div>
+<div class="hex-bg"></div>
 
 <section class="hero">
 
@@ -243,7 +246,7 @@ box-shadow:0 15px 30px rgba(0,0,0,0.15);
 
 </div>
 
-<div class="blue"></div>
+<div class="blue-area"></div>
 
 </section>
 
