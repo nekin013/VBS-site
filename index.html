@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VBS Soluções | Home</title>
+    <title>Home | VBS Soluções</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .hero { padding: 140px 8%; text-align: center; background: linear-gradient(rgba(0,40,85,0.7), rgba(0,40,85,0.7)), url('https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=1920'); background-size: cover; background-position: center; color: white; }
-        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.9; }
-        .btn-acao { background: var(--azul-claro); color: var(--azul-brand); padding: 20px 40px; border-radius: 50px; text-decoration: none; font-weight: 800; text-transform: uppercase; transition: 0.3s; }
-        .btn-acao:hover { background: white; transform: scale(1.05); }
+        .hero { padding: 120px 20px; text-align: center; background: linear-gradient(rgba(0,40,85,0.8), rgba(0,40,85,0.8)), url('https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=1920') center/cover; color: white; border-radius: 20px; margin-bottom: 40px; }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+        .cards-home { display: flex; gap: 20px; flex-wrap: wrap; }
+        .card { background: white; flex: 1; min-width: 250px; padding: 40px 20px; text-align: center; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .card i { font-size: 3rem; color: var(--azul-claro); margin-bottom: 20px; }
+        .card h3 { color: var(--azul-brand); margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-menu"><img src="img/logo.png" alt="VBS Soluções"></div>
+        <div class="logo-menu"><img src="img/logo.png" alt="VBS"></div>
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="produtos.html">Produtos</a>
@@ -27,14 +29,38 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Sua segurança levada a sério.</h1>
-        <p>Expertise em engenharia elétrica e sistemas de segurança eletrônica avançados para proteger o que é mais importante para você.</p>
-        <a href="contato.html" class="btn-acao">Solicitar Orçamento Técnico</a>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>Sua segurança, nossa engenharia.</h1>
+            <p>Soluções inteligentes e de alta performance em Engenharia Elétrica e Segurança Eletrônica em Alta Floresta.</p>
+            <a href="contato.html" class="btn-padrao">Fale com um Especialista</a>
+        </section>
+
+        <div class="cards-home">
+            <div class="card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Projetos Elétricos</h3>
+                <p>Instalações e manutenções industriais e prediais com rigor técnico.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Segurança Eletrônica</h3>
+                <p>Câmeras IP, alarmes e controle de acesso de última geração.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>Automação</h3>
+                <p>Controle total do seu patrimônio na palma da sua mão.</p>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p style="font-weight: 800; letter-spacing: 3px;">VBS SOLUÇÕES</p>
+        <h3 style="letter-spacing: 2px;">VBS SOLUÇÕES</h3>
+        <div class="footer-info">
+            <p>Rua Rio Grande do Sul, 204 - Alta Floresta, MT</p>
+            <p>&copy; 2026 Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
