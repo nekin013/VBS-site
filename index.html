@@ -1,194 +1,190 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VBS Tecnologia</title>
+
+<title>VBS Soluções</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
 margin:0;
-background:#0f172a;
-color:white;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(#a8d7df,#6bb8c6);
 }
+
+/* MENU */
 
 header{
-background:#020617;
-padding:20px;
+background:#6bb8c6;
+padding:15px;
 display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#38bdf8;
+justify-content:center;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:20px;
-font-size:15px;
-}
-
-.hero{
-text-align:center;
-padding:120px 20px;
-background:linear-gradient(135deg,#0ea5e9,#2563eb);
-}
-
-.hero h1{
-font-size:45px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:18px;
-opacity:0.9;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 25px;
-background:white;
-color:#1e3a8a;
-text-decoration:none;
-border-radius:6px;
+margin:0 25px;
 font-weight:bold;
+letter-spacing:1px;
+transition:0.3s;
+position:relative;
 }
 
-section{
+nav a:hover{
+color:#083a52;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:white;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* FUNDO HEXAGONO */
+
+.bg{
+background: repeating-linear-gradient(
+60deg,
+#e5e5e5,
+#e5e5e5 20px,
+#f0f0f0 20px,
+#f0f0f0 40px
+);
 padding:80px 20px;
-max-width:1000px;
+}
+
+/* LOGO BOX */
+
+.logo-box{
+max-width:450px;
 margin:auto;
-}
-
-h2{
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 text-align:center;
-margin-bottom:40px;
 }
 
-.downloads{
+.logo-box img{
+max-width:100%;
+}
+
+.logo-box h2{
+margin-top:15px;
+color:#083a52;
+}
+
+/* CARDS */
+
+.cards{
 display:flex;
-gap:20px;
-flex-wrap:wrap;
 justify-content:center;
+gap:40px;
+padding:80px 20px;
+flex-wrap:wrap;
 }
 
 .card{
-background:#020617;
-padding:25px;
-border-radius:10px;
-width:250px;
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(5px);
+border-radius:15px;
+padding:30px;
+width:260px;
 text-align:center;
-}
-
-.card a{
-display:inline-block;
-margin-top:10px;
-background:#0ea5e9;
-padding:10px 20px;
-border-radius:6px;
 color:white;
-text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:0.3s;
 }
 
-footer{
-text-align:center;
-padding:40px;
-background:#020617;
-margin-top:40px;
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+margin-top:10px;
+}
+
+.icon{
+font-size:40px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:700px){
+
+nav a{
+margin:0 10px;
 font-size:14px;
-opacity:0.7;
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">
-<img src="logo.png" alt="VBS Tecnologia" height="40">
-</div>
-
 <nav>
-<a href="#">Home</a>
-<a href="#sobre">Sobre</a>
-<a href="#downloads">Downloads</a>
-<a href="#contato">Contato</a>
+<a href="#">HOME</a>
+<a href="#">PRODUTOS</a>
+<a href="#">CONTATO</a>
+<a href="#">DOWNLOAD</a>
+<a href="#">SOBRE</a>
 </nav>
-
 </header>
 
-<section class="hero">
+<div class="bg">
 
-<h1>VBS Tecnologia</h1>
-<p>Soluções tecnológicas e desenvolvimento de software</p>
+<div class="logo-box">
 
-<a class="btn" href="#downloads">Baixar Software</a>
+<img src="logo.png">
 
-</section>
+<h2>Elétrica e Segurança Eletrônica</h2>
 
-<section id="sobre">
+</div>
 
-<h2>Sobre a Empresa</h2>
+</div>
 
-<p style="text-align:center; max-width:700px; margin:auto;">
-A VBS Tecnologia desenvolve soluções digitais, softwares e ferramentas
-para automação e inovação tecnológica.
-Nosso objetivo é criar tecnologias eficientes, acessíveis e modernas.
-</p>
-
-</section>
-
-<section id="downloads">
-
-<h2>Downloads</h2>
-
-<div class="downloads">
+<section class="cards">
 
 <div class="card">
-<h3>Software VBS</h3>
-<p>Versão 1.0</p>
-<a href="downloads/software.zip">Download</a>
+<div class="icon">📷</div>
+<h3>Câmeras de Segurança</h3>
+<p>Sistemas de monitoramento para residências e empresas.</p>
 </div>
 
 <div class="card">
-<h3>Manual</h3>
-<p>Documentação</p>
-<a href="downloads/manual.pdf">Download</a>
+<div class="icon">🚪</div>
+<h3>Automação de Portões</h3>
+<p>Controle de portões automáticos com tecnologia moderna.</p>
 </div>
 
+<div class="card">
+<div class="icon">🚨</div>
+<h3>Sistemas de Alarme</h3>
+<p>Proteção e segurança para seu patrimônio.</p>
+</div>
+
+<div class="card">
+<div class="icon">📶</div>
+<h3>Controle via App</h3>
+<p>Gerencie dispositivos remotamente pelo celular.</p>
 </div>
 
 </section>
-
-<section id="contato">
-
-<h2>Contato</h2>
-
-<p style="text-align:center;">
-Email: contato@vbs.com<br>
-Suporte: suporte@vbs.com
-</p>
-
-</section>
-
-<footer>
-
-© 2026 VBS Tecnologia
-
-</footer>
 
 </body>
-
 </html>
