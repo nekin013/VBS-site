@@ -1,4 +1,4 @@
-/* style.css - Versão Premium VBS SOLUÇÕES */
+/* style.css - VBS SOLUÇÕES */
 :root {
     --azul-brand: #002855;
     --azul-claro: #79C2D0;
@@ -11,58 +11,59 @@
 
 body { 
     background-color: var(--cinza-fundo);
-    background-image: radial-gradient(#d1d9e0 0.8px, transparent 0.8px);
-    background-size: 24px 24px;
+    background-image: radial-gradient(#d1d9e0 1px, transparent 1px);
+    background-size: 25px 25px;
     color: #333; 
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* --- MENU ULTRA MODERNO --- */
+main { flex: 1; padding: 60px 5%; max-width: 1300px; margin: 0 auto; width: 100%; }
+
+/* --- MENU GLASSMORPHISM --- */
 header { 
     background: var(--menu-bg);
     backdrop-filter: blur(12px);
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 0 8%; 
+    padding: 0 5%; 
     height: 90px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
     position: sticky; top: 0; z-index: 1000; 
     border-bottom: 2px solid var(--azul-claro);
 }
+.logo-menu img { height: 50px; filter: brightness(0) invert(1); transition: 0.3s; }
+.logo-menu img:hover { transform: scale(1.05); }
 
-.logo-menu img { height: 55px; width: auto; filter: brightness(0) invert(1); }
-
-nav { display: flex; gap: 10px; }
-
+nav { display: flex; gap: 8px; }
 nav a { 
-    text-decoration: none; 
-    color: rgba(255,255,255,0.7); 
-    font-weight: 600; 
-    padding: 12px 20px; 
-    text-transform: uppercase; 
-    font-size: 12px; 
-    letter-spacing: 1.2px; 
-    transition: all 0.3s ease;
-    border-radius: 50px; /* Estilo cápsula */
+    text-decoration: none; color: rgba(255,255,255,0.7); font-weight: 600; 
+    padding: 10px 18px; text-transform: uppercase; font-size: 12px; 
+    letter-spacing: 1.2px; transition: all 0.3s ease; border-radius: 50px; 
 }
+nav a:hover { color: var(--branco); background: rgba(255,255,255,0.1); }
+nav a.active { color: var(--azul-brand); background: var(--azul-claro); font-weight: 800; }
 
-nav a:hover { 
-    color: var(--branco); 
-    background: rgba(255,255,255,0.1);
+/* --- BOTÕES E TÍTULOS --- */
+.titulo-secao { text-align: center; margin-bottom: 50px; }
+.titulo-secao h1 { color: var(--azul-brand); font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; }
+.titulo-secao p { color: #666; font-size: 1.1rem; }
+
+.btn-padrao {
+    background: var(--azul-claro); color: var(--azul-brand); padding: 15px 35px;
+    border-radius: 50px; text-decoration: none; font-weight: 800; text-transform: uppercase;
+    transition: 0.3s; display: inline-block; box-shadow: 0 5px 15px rgba(121, 194, 208, 0.4);
 }
+.btn-padrao:hover { transform: translateY(-3px); background: #62aebc; color: white; }
 
-/* Página Ativa - Destaque em cápsula azul claro */
-nav a.active { 
-    color: var(--azul-brand); 
-    background: var(--azul-claro); 
-    font-weight: 800;
-}
-
-/* --- FOOTER PADRONIZADO --- */
-footer { background: var(--azul-brand); color: white; padding: 50px 20px; text-align: center; }
+/* --- RODAPÉ --- */
+footer { background: var(--azul-brand); color: white; padding: 40px 20px; text-align: center; margin-top: auto; }
+.footer-info p { font-size: 0.85rem; opacity: 0.8; margin-top: 5px; }
 
 @media (max-width: 950px) {
-    header { height: auto; padding: 20px; flex-direction: column; gap: 20px; }
-    nav { flex-wrap: wrap; justify-content: center; gap: 5px; }
-    nav a { padding: 8px 15px; font-size: 10px; }
+    header { height: auto; padding: 20px; flex-direction: column; gap: 15px; }
+    nav { flex-wrap: wrap; justify-content: center; }
 }
