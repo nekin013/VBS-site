@@ -7,17 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .produtos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px; }
-        .produto-card { background: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid var(--azul-claro); transition: 0.3s; }
-        .produto-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .produto-card i { font-size: 3.5rem; color: var(--azul-brand); margin-bottom: 20px; }
-        .produto-card h2 { color: var(--azul-brand); margin-bottom: 15px; font-size: 1.5rem; }
-        .produto-card p { color: #555; margin-bottom: 20px; font-size: 1rem; }
-        .lista-servicos { text-align: left; list-style: none; margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px; }
-        .lista-servicos li { margin-bottom: 10px; font-size: 0.95rem; color: #444; }
-        .lista-servicos li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--azul-claro); margin-right: 10px; }
-    </style>
 </head>
 <body>
     <header>
@@ -33,35 +22,25 @@
 
     <main>
         <div class="titulo-secao">
-            <h1>As Nossas Soluções</h1>
-            <p>Serviços especializados executados por profissionais qualificados.</p>
+            <h1>Nossa Vitrine</h1>
+            <p>Encontre a melhor solução para sua segurança.</p>
         </div>
 
-        <div class="produtos-grid">
-            <div class="produto-card">
-                <i class="fa-solid fa-plug-circle-check"></i>
-                <h2>Engenharia Elétrica</h2>
-                <p>Garantimos a segurança e a eficiência energética do seu imóvel com projetos estruturados e manutenção de alto nível.</p>
-                <ul class="lista-servicos">
-                    <li>Manutenção comercial e residencial</li>
-                    <li>Quadros de comando e energia</li>
-                    <li>Iluminação em LED e projetos luminotécnicos</li>
-                    <li>Adequação às normas técnicas (NR10)</li>
-                </ul>
-            </div>
-
-            <div class="produto-card">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h2>Segurança Eletrônica</h2>
-                <p>Sistemas integrados para monitorização e proteção contínua do seu património e da sua família.</p>
-                <ul class="lista-servicos">
-                    <li>Sistemas de CFTV HD e IP</li>
-                    <li>Alarmes inteligentes monitorizados</li>
-                    <li>Instalação de Cercas Elétricas</li>
-                    <li>Acesso remoto via telemóvel</li>
-                </ul>
-            </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Pesquisar por nome do produto...">
         </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+            <button class="filter-btn" onclick="filtrarCategoria('promocao')">🔥 Promoção</button>
+            <button class="filter-btn" onclick="filtrarCategoria('cameras')">Câmeras</button>
+            <button class="filter-btn" onclick="filtrarCategoria('portoes')">Portões</button>
+            <button class="filter-btn" onclick="filtrarCategoria('rossi')">Rossi</button>
+            <button class="filter-btn" onclick="filtrarCategoria('ppa')">PPA</button>
+            <button class="filter-btn" onclick="filtrarCategoria('garen')">Garen</button>
+        </div>
+
+        <div id="vitrineGrid" class="vitrine-grid"></div>
     </main>
 
     <footer>
@@ -71,5 +50,62 @@
             <p>© 2026 Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        // ==========================================================
+        //  PARTE FÁCIL: ADICIONE SEUS PRODUTOS AQUI ABAIXO
+        // ==========================================================
+        const produtos = [
+            { id: '#00001', nome: 'Controle Remoto Rossi', foto: 'img/controle-rossi.png', preco: 'R$ 45,00', categoria: 'rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00002', nome: 'Câmera Intelbras Dome', foto: 'img/camera-dome.png', preco: 'R$ 180,00', categoria: 'cameras', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00003', nome: 'Motor PPA DZ Rio 1/4', foto: 'img/motor-ppa.png', preco: 'R$ 550,00', categoria: 'ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00004', nome: 'Kit Portão Garen Fit', foto: 'img/garen-fit.png', preco: 'R$ 499,00', categoria: 'garen promocao', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            // Basta copiar a linha acima e mudar os dados para adicionar mais!
+        ];
+        // ==========================================================
+
+        const grid = document.getElementById('vitrineGrid');
+        const searchInput = document.getElementById('searchInput');
+
+        // Função para renderizar os produtos na tela
+        function renderizarProdutos(lista) {
+            grid.innerHTML = '';
+            lista.forEach(prod => {
+                grid.innerHTML += `
+                    <div class="produto-item">
+                        <span class="produto-id">${prod.id}</span>
+                        <img src="${prod.foto}" alt="${prod.nome}" onerror="this.src='https://via.placeholder.com/200?text=Sem+Foto'">
+                        <span class="produto-nome">${prod.nome}</span>
+                        <span class="produto-preco">${prod.preco}</span>
+                        <a href="${prod.link}" target="_blank" class="btn-adquirir"><i class="fa-brands fa-whatsapp"></i> ADQUIRIR AGORA</a>
+                    </div>
+                `;
+            });
+        }
+
+        // Lógica de Busca
+        searchInput.addEventListener('input', (e) => {
+            const termo = e.target.value.toLowerCase();
+            const filtrados = produtos.filter(p => p.nome.toLowerCase().includes(termo));
+            renderizarProdutos(filtrados);
+        });
+
+        // Lógica de Filtro por Categoria
+        function filtrarCategoria(cat) {
+            // Atualiza botões
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if(cat === 'todos') {
+                renderizarProdutos(produtos);
+            } else {
+                const filtrados = produtos.filter(p => p.categoria.includes(cat));
+                renderizarProdutos(filtrados);
+            }
+        }
+
+        // Inicializar a vitrine
+        renderizarProdutos(produtos);
+    </script>
 </body>
 </html>
