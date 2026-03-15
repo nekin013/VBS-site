@@ -3,28 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VBS Soluções | Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>VBS Soluções | Elétrica e Segurança Eletrônica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
+        <div class="logo-menu">
+            <img src="img/logo.png" alt="VBS Soluções">
+        </div>
         <nav>
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
             <a href="produtos.html">Produtos</a>
             <a href="contato.html">Contato</a>
-            <a href="download.html">Download</a>
             <a href="sobre.html">Sobre</a>
         </nav>
     </header>
-    <main>
-        <div class="container-card">
-            <img src="img/logo.png" alt="VBS Soluções" style="max-width: 250px; margin-bottom: 20px;">
-            <h1 style="color: #002855; margin-bottom: 15px;">Especialistas em Elétrica e Segurança</h1>
-            <p>Protegendo seu patrimônio com tecnologia de ponta e serviços técnicos de alta qualidade.</p>
-            <a href="contato.html" class="btn">SOLICITAR ORÇAMENTO</a>
+
+    <section class="hero">
+        <h1>Soluções Inteligentes em Energia e Segurança</h1>
+        <p>Instalações elétricas e sistemas de segurança eletrônica com padrão de excelência.</p>
+        <a href="contato.html" class="btn-principal">SOLICITAR ORÇAMENTO GRATUITO</a>
+    </section>
+
+    <div class="features">
+        <div class="feature-item">
+            <i class="fa-solid fa-user-check"></i>
+            <h3>Técnicos Certificados</h3>
+            <p>Profissionais qualificados para garantir sua segurança.</p>
         </div>
-    </main>
-    <footer>&copy; 2026 VBS Soluções - Elétrica e Segurança Eletrônica</footer>
+        <div class="feature-item">
+            <i class="fa-solid fa-clock"></i>
+            <h3>Atendimento Rápido</h3>
+            <p>Agilidade na execução e suporte técnico eficiente.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Garantia Total</h3>
+            <p>Trabalhamos apenas com equipamentos de primeira linha.</p>
+        </div>
+    </div>
+
+    <section id="resumo-servicos">
+        <h2>O que fazemos por você</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+            <div style="text-align: left; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <img src="https://images.unsplash.com/photo-1621905231291-007412f0cc13?auto=format&fit=crop&q=80&w=500" alt="Elétrica" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <h3 style="color: var(--azul-escuro);">Engenharia Elétrica</h3>
+                    <p style="margin: 15px 0;">De pequenas manutenções a projetos complexos de infraestrutura elétrica residencial e comercial.</p>
+                    <a href="produtos.html" style="color: var(--azul-claro); font-weight: bold; text-decoration: none;">Ver detalhes →</a>
+                </div>
+            </div>
+
+            <div style="text-align: left; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <img src="https://images.unsplash.com/photo-1557597774-9d2739f85a94?auto=format&fit=crop&q=80&w=500" alt="Segurança" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <h3 style="color: var(--azul-escuro);">Segurança Eletrônica</h3>
+                    <p style="margin: 15px 0;">Sistemas integrados de CFTV, alarmes e controle de acesso com monitoramento remoto.</p>
+                    <a href="produtos.html" style="color: var(--azul-claro); font-weight: bold; text-decoration: none;">Ver detalhes →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>VBS SOLUÇÕES</strong></p>
+        <p>Rua Exemplo, 123 - Sua Cidade - UF</p>
+        <p>WhatsApp: (XX) XXXXX-XXXX | contato@vbssolucoes.com.br</p>
+        <div style="margin-top: 20px; opacity: 0.6; font-size: 11px;">
+            &copy; 2026 VBS Soluções - Todos os direitos reservados.
+        </div>
+    </footer>
+
 </body>
 </html>
