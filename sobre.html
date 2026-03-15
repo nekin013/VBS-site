@@ -3,18 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VBS Soluções | Sobre</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Sobre | VBS Soluções</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .sobre-container { background: white; padding: 50px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .sobre-container h2 { color: var(--azul-brand); margin-bottom: 20px; font-size: 2rem; }
+        .sobre-container p { font-size: 1.1rem; color: #555; margin-bottom: 20px; line-height: 1.8; }
+        .valores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+        .valor-card { background: var(--cinza-fundo); padding: 30px; border-radius: 10px; text-align: center; border-bottom: 3px solid var(--azul-claro); }
+        .valor-card i { font-size: 2.5rem; color: var(--azul-brand); margin-bottom: 15px; }
+    </style>
 </head>
 <body>
-    <header><nav><a href="index.html">Home</a><a href="produtos.html">Produtos</a><a href="contato.html">Contato</a><a href="download.html">Download</a><a href="sobre.html" class="active">Sobre</a></nav></header>
+    <header>
+        <div class="logo-menu"><img src="img/logo.png" alt="VBS"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="contato.html">Contato</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html" class="active">Sobre</a>
+        </nav>
+    </header>
+
     <main>
-        <div class="container-card">
-            <h2 style="color: #002855;">Sobre a VBS Soluções</h2>
-            <p style="text-align: justify; line-height: 1.6;">A VBS Soluções nasceu com a missão de oferecer excelência em engenharia elétrica e sistemas de segurança eletrônica. Nosso compromisso é com a tranquilidade do cliente, utilizando equipamentos de última geração e mão de obra qualificada.</p>
+        <div class="titulo-secao">
+            <h1>Quem Somos</h1>
+            <p>Conheça a história e os princípios da VBS Soluções.</p>
+        </div>
+
+        <div class="sobre-container">
+            <h2>Nossa História</h2>
+            <p>Localizada no Setor Norte 3 em Alta Floresta, Mato Grosso, a <strong>VBS Soluções</strong> nasceu da necessidade de entregar serviços de engenharia elétrica e segurança eletrônica com verdadeira qualidade e responsabilidade técnica.</p>
+            <p>Nosso foco não é apenas instalar equipamentos, mas projetar sistemas que garantam a proteção do seu patrimônio e a eficiência energética da sua empresa, sempre pautados nas normas técnicas vigentes.</p>
+
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Missão</h3>
+                    <p>Entregar soluções tecnológicas de alta precisão que promovam segurança e tranquilidade.</p>
+                </div>
+                <div class="valor-card">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>Visão</h3>
+                    <p>Ser a empresa referência em engenharia e segurança no norte do Mato Grosso.</p>
+                </div>
+                <div class="valor-card">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <h3>Valores</h3>
+                    <p>Ética, Transparência, Rigor Técnico e Respeito ao Cliente.</p>
+                </div>
+            </div>
         </div>
     </main>
-    <footer>&copy; 2026 VBS Soluções</footer>
+
+    <footer>
+        <h3 style="letter-spacing: 2px;">VBS SOLUÇÕES</h3>
+    </footer>
 </body>
 </html>
