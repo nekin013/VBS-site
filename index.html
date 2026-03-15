@@ -1,274 +1,281 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>VBS Soluções</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-background:#dcdcdc;
-overflow-x:hidden;
-}
-
-/* HEXAGONOS */
-
-.hex-bg{
-
-position:absolute;
-top:70px;
-left:0;
-width:100%;
-height:180px;
-
-background:
-linear-gradient(30deg,#d0d0d0 12%,transparent 12.5%,transparent 87%,#d0d0d0 87.5%,#d0d0d0),
-linear-gradient(150deg,#d0d0d0 12%,transparent 12.5%,transparent 87%,#d0d0d0 87.5%,#d0d0d0),
-linear-gradient(30deg,#d0d0d0 12%,transparent 12.5%,transparent 87%,#d0d0d0 87.5%,#d0d0d0),
-linear-gradient(150deg,#d0d0d0 12%,transparent 12.5%,transparent 87%,#d0d0d0 87.5%,#d0d0d0);
-
-background-size:80px 140px;
-
-background-position:
-0 0,
-0 0,
-40px 70px,
-40px 70px;
-
-z-index:0;
-
-}
-
-/* MENU */
-
-header{
-
-background:linear-gradient(90deg,#7fc5cc,#4fa5ba);
-
-height:70px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-position:relative;
-z-index:5;
-
-}
-
-/* remove qualquer linha estranha */
-
-header::after{
-display:none;
-}
-
-nav a{
-
-color:white;
-text-decoration:none;
-margin:0 30px;
-font-weight:bold;
-letter-spacing:1px;
-padding:10px 5px;
-position:relative;
-
-}
-
-/* indicador de menu ativo */
-
-nav a.active::after{
-
-content:"";
-
-position:absolute;
-
-left:0;
-bottom:-8px;
-
-width:100%;
-height:3px;
-
-background:white;
-border-radius:2px;
-
-}
-
-/* hover suave */
-
-nav a:hover{
-
-opacity:0.85;
-
-}
-
-/* HERO */
-
-.hero{
-
-position:relative;
-height:320px;
-
-display:flex;
-justify-content:center;
-align-items:flex-start;
-
-padding-top:60px;
-
-}
-
-/* AREA AZUL */
-
-.blue-area{
-
-position:absolute;
-
-top:120px;
-left:0;
-
-width:100%;
-height:220px;
-
-background:linear-gradient(#6fb8c6,#5ca8b9);
-
-border-top-right-radius:140px;
-border-top-left-radius:40px;
-
-z-index:1;
-
-}
-
-/* LOGO */
-
-.logo-box{
-
-position:relative;
-
-background:rgba(255,255,255,0.6);
-
-backdrop-filter:blur(12px);
-
-padding:45px 80px;
-
-border-radius:20px;
-
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-
-text-align:center;
-
-z-index:3;
-
-}
-
-.logo-box img{
-
-width:280px; /* maior */
-
-}
-
-.logo-box h2{
-
-margin-top:15px;
-color:#123d4d;
-
-}
-
-/* CARDS */
-
-.cards{
-
-margin-top:140px;
-
-display:flex;
-justify-content:center;
-gap:40px;
-
-}
-
-.card{
-
-width:320px;
-
-background:rgba(255,255,255,0.35);
-
-backdrop-filter:blur(10px);
-
-border-radius:20px;
-
-padding:40px;
-
-text-align:center;
-
-color:white;
-
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBS Soluções - Elétrica e Segurança Eletrônica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* --- MENU SUPERIOR --- */
+        header {
+            background-color: #79C2D0; /* Azul claro do menu */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        nav {
+            display: flex;
+            gap: 5px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 20px 30px;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* --- ÁREA PRINCIPAL E FUNDO --- */
+        .background {
+            /* Fundo com padrão sutil de pontinhos remetendo a tecnologia */
+            background-color: #f2f6f9;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 25px 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        /* --- CARTÃO CENTRAL (DESTAQUE) --- */
+        .main-card {
+            background: #ffffff;
+            border-radius: 20px;
+            /* Sombra forte para destacar o logo */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            padding: 50px 60px;
+            text-align: center;
+            margin-top: 60px;
+            max-width: 650px;
+            width: 90%;
+            border-bottom: 4px solid #002855; /* Detalhe de acabamento */
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 80px;
+            color: #004a80;
+        }
+        
+        .logo-text h1 {
+            font-size: 60px;
+            color: #002855;
+            letter-spacing: 2px;
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .logo-text h2 {
+            font-size: 22px;
+            color: #002855;
+            letter-spacing: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        
+        .logo-subtitle {
+            font-size: 14px;
+            color: #002855;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #444;
+            margin: 25px 0;
+            font-weight: 400;
+        }
+
+        /* BOTÃO DE ORÇAMENTO */
+        .cta-button {
+            background: #002855;
+            color: #fff;
+            border: none;
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 40, 85, 0.4);
+        }
+        
+        .cta-button:hover {
+            background: #004a80;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 40, 85, 0.6);
+        }
+
+        /* --- CARDS INFERIORES (MENOS DESTAQUE) --- */
+        .services-container {
+            display: flex;
+            gap: 25px;
+            max-width: 750px;
+            width: 90%;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            /* Fundo branco e borda sutil no lugar do azul forte */
+            background: #ffffff;
+            border: 1px solid #e0e8ed;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            flex: 1;
+            /* Sombra bem leve para não brigar com o card principal */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04); 
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #79C2D0;
+        }
+        
+        .service-card h3 {
+            color: #002855;
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .service-card h3 i {
+            color: #79C2D0; /* Ícone com a cor do menu para harmonia */
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background: #e8f0f4;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 13px;
+            color: #555;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        footer strong {
+            color: #002855;
+        }
+
+        /* --- RESPONSIVIDADE (CELULAR) --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+            }
+            nav a {
+                text-align: center;
+                padding: 15px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .services-container {
+                flex-direction: column;
+            }
+            .logo-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .main-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <header>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Produtos</a>
+            <a href="#">Contato</a>
+            <a href="#">Download</a>
+            <a href="#">Sobre</a>
+        </nav>
+    </header>
 
-<nav>
+    <div class="background">
+        <div class="main-card">
+            <div class="logo-container">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <div class="logo-text">
+                    <h1>VBS</h1>
+                    <h2>Soluções</h2>
+                </div>
+            </div>
+            <p class="logo-subtitle">Elétrica e Segurança Eletrônica</p>
+            
+            <p class="tagline">Sua Segurança e Energia em Primeiro Lugar.</p>
+            <button class="cta-button">PEÇA UM ORÇAMENTO</button>
+        </div>
 
-<a class="active" href="#">HOME</a>
-<a href="#">PRODUTOS</a>
-<a href="#">CONTATO</a>
-<a href="#">DOWNLOAD</a>
-<a href="#">SOBRE</a>
+        <div class="services-container">
+            <div class="service-card">
+                <h3><i class="fa-solid fa-bolt"></i> Elétrica</h3>
+                <p>Projetos, instalações e manutenções elétricas com foco em segurança e eficiência para sua casa ou empresa.</p>
+            </div>
+            <div class="service-card">
+                <h3><i class="fa-solid fa-video"></i> Segurança</h3>
+                <p>Sistemas de CFTV, alarmes e monitoramento de alta tecnologia para proteger o que mais importa.</p>
+            </div>
+        </div>
+    </div>
 
-</nav>
-
-</header>
-
-<div class="hex-bg"></div>
-
-<section class="hero">
-
-<div class="logo-box">
-
-<img src="logo.png">
-
-<h2>Elétrica e Segurança Eletrônica</h2>
-
-</div>
-
-<div class="blue-area"></div>
-
-</section>
-
-<section class="cards">
-
-<div class="card">
-
-<h3>Lorem ipsum dolor</h3>
-
-<p>sit amet, consectetur</p>
-
-</div>
-
-<div class="card">
-
-<h3>Lorem ipsum dolor</h3>
-
-<p>sit amet, consectetur</p>
-
-</div>
-
-</section>
+    <footer>
+        <p>telefone: <strong>(XX) XXXXX-XXXX</strong> | e-mail: <strong>contato@vbssolucoes.com.br</strong></p>
+        <p>&copy; 2024 VBS Soluções - Todos os direitos reservados</p>
+    </footer>
 
 </body>
 </html>
