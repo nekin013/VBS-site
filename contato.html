@@ -25,6 +25,7 @@
             color: #333; 
         }
 
+        /* --- MENU PADRONIZADO --- */
         header { 
             background: var(--azul-brand);
             display: flex; 
@@ -39,33 +40,31 @@
         nav { display: flex; gap: 5px; }
         nav a { text-decoration: none; color: var(--branco); font-weight: 500; padding: 10px 15px; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; transition: 0.3s; }
         nav a:hover { color: var(--azul-claro); }
-        nav a.active { color: var(--azul-claro); font-weight: 800; }
+        nav a.active { color: var(--azul-claro); font-weight: 800; border-bottom: 2px solid var(--azul-claro); }
 
+        /* --- SEÇÃO CONTATO --- */
         .contato-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
         .titulo-contato { text-align: center; margin-bottom: 50px; }
         .titulo-contato h1 { color: var(--azul-brand); font-size: 2.5rem; font-weight: 800; }
 
-        /* AJUSTE DE ALINHAMENTO DO GRID */
         .grid-contato { 
             display: flex; 
             gap: 30px; 
-            align-items: stretch; /* Faz os dois lados terem a mesma altura */
+            align-items: stretch;
         }
 
-        .coluna-info { flex: 1; display: flex; flex-direction: column; }
-        .coluna-mapa { flex: 1.2; } /* Mapa levemente mais largo para equilíbrio visual */
+        .coluna-info { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+        .coluna-mapa { flex: 1.2; }
 
         .info-card { 
             background: white; padding: 22px; border-radius: 8px; 
             box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 5px solid var(--azul-claro);
-            margin-bottom: 15px;
-            flex-grow: 1; /* Distribui o espaço entre os cards igualmente */
         }
         .info-card i { font-size: 20px; color: var(--azul-brand); margin-bottom: 8px; display: block; }
         .info-card h3 { color: var(--azul-brand); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
-        .info-card p { font-size: 0.9rem; color: #555; }
+        .info-card p { font-size: 0.9rem; color: #555; line-height: 1.4; }
 
-        .social-buttons { display: flex; gap: 10px; margin-top: 10px; }
+        .social-buttons { display: flex; gap: 10px; margin-top: 5px; }
         .btn-social { 
             flex: 1; text-align: center; padding: 12px; border-radius: 5px; 
             text-decoration: none; color: white; font-weight: 600; font-size: 0.8rem;
@@ -75,17 +74,18 @@
         .btn-face { background: #1877F2; }
         
         .btn-whatsapp { 
-            background: #25D366; width: 100%; padding: 16px; border-radius: 5px;
+            background: #25D366; width: 100%; padding: 18px; border-radius: 5px;
             color: white; text-decoration: none; font-weight: 700; text-transform: uppercase;
             display: flex; align-items: center; justify-content: center; gap: 10px;
-            margin-top: 15px; box-shadow: 0 8px 15px rgba(37, 211, 102, 0.2);
+            margin-top: 10px; box-shadow: 0 8px 15px rgba(37, 211, 102, 0.2);
+            transition: 0.3s;
         }
+        .btn-whatsapp:hover { background: #1ebd57; transform: translateY(-2px); }
 
         .mapa-container { 
-            height: 100%; /* Ocupa a altura total da coluna alinhada */
+            height: 100%; min-height: 500px;
             background: #e2e8f0; border-radius: 8px; overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #cbd5e1;
-            min-height: 450px;
         }
 
         footer { background: var(--azul-brand); color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
@@ -93,13 +93,14 @@
         @media (max-width: 900px) {
             .grid-contato { flex-direction: column; }
             header { flex-direction: column; padding: 20px; }
+            nav { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-menu"><img src="img/logo.png" alt="VBS"></div>
+        <div class="logo-menu"><img src="img/logo.png" alt="VBS Soluções"></div>
         <nav>
             <a href="index.html">Home</a>
             <a href="produtos.html">Produtos</a>
@@ -112,28 +113,28 @@
     <main class="contato-section">
         <div class="titulo-contato">
             <h1>Canais de Atendimento</h1>
-            <p>Escolha a melhor forma de falar com a nossa equipe técnica.</p>
+            <p>Fale com a VBS Soluções em Alta Floresta</p>
         </div>
 
         <div class="grid-contato">
             <div class="coluna-info">
                 <div class="info-card">
                     <i class="fa-solid fa-location-dot"></i>
-                    <h3>Localização</h3>
-                    <p>Rua Rio Grande do Sul, 204 - Setor Norte 3</p>
-                    <p>Alta Floresta - MT</p>
+                    <h3>Localização Exata</h3>
+                    <p>Avenida Rio Grande do Sul, 204 - Setor Norte 03</p>
+                    <p>Alta Floresta - MT, 78580-000</p>
                 </div>
 
                 <div class="info-card">
                     <i class="fa-solid fa-clock"></i>
-                    <h3>Horários</h3>
-                    <p>Segunda a Sexta: 07:30 - 11:00 / 13:30 - 17:30</p>
-                    <p>Sábado: 07:30 - 11:00</p>
+                    <h3>Horários de Atendimento</h3>
+                    <p><strong>Segunda a Sexta:</strong> 07:30 – 11:00 | 13:30 – 17:30</p>
+                    <p><strong>Sábado:</strong> 07:30 – 11:00</p>
                 </div>
 
                 <div class="info-card">
                     <i class="fa-solid fa-envelope"></i>
-                    <h3>Orçamentos Formais</h3>
+                    <h3>E-mail</h3>
                     <p>vbsmarketingdigital7@gmail.com</p>
                 </div>
 
@@ -146,7 +147,7 @@
                     </a>
                 </div>
 
-                <a href="https://wa.me/5566984228702?text=Olá! Vim pelo site e gostaria de um orçamento." target="_blank" class="btn-whatsapp">
+                <a href="https://web.whatsapp.com/send/?phone=5566984228702&text=Olá! Vim pelo site e gostaria de um orçamento." target="_blank" class="btn-whatsapp">
                     <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
                     Enviar Mensagem no WhatsApp
                 </a>
@@ -155,7 +156,7 @@
             <div class="coluna-mapa">
                 <div class="mapa-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.447544026214!2d-56.079257624132334!3d-9.855010678280058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93033580579e0001%3A0xc3924f7f2b604e25!2sVBS%20Soluções!5e0!3m2!1spt-BR!2sbr!4v1710500000000!5m2!1spt-BR!2sbr" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.432321473636!2d-56.0645604!3d-9.8552194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x930331422ed83f23%3A0xbc42da1be0f06a5c!2sVBS%20SOLU%C3%87%C3%95ES!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
