@@ -3,27 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VBS Soluções | Produtos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Produtos | VBS Soluções</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .produtos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px; }
+        .produto-card { background: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid var(--azul-claro); transition: 0.3s; }
+        .produto-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .produto-card i { font-size: 3.5rem; color: var(--azul-brand); margin-bottom: 20px; }
+        .produto-card h2 { color: var(--azul-brand); margin-bottom: 15px; font-size: 1.5rem; }
+        .produto-card p { color: #555; margin-bottom: 20px; font-size: 1rem; }
+        .lista-servicos { text-align: left; list-style: none; margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px; }
+        .lista-servicos li { margin-bottom: 10px; font-size: 0.95rem; color: #444; }
+        .lista-servicos li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--azul-claro); margin-right: 10px; }
+    </style>
 </head>
 <body>
-    <header><nav><a href="index.html">Home</a><a href="produtos.html" class="active">Produtos</a><a href="contato.html">Contato</a><a href="download.html">Download</a><a href="sobre.html">Sobre</a></nav></header>
+    <header>
+        <div class="logo-menu"><img src="img/logo.png" alt="VBS"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produtos.html" class="active">Produtos</a>
+            <a href="contato.html">Contato</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
+
     <main>
-        <div class="container-card">
-            <h2 style="color: #002855; margin-bottom: 30px;">Nossas Soluções</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left;">
-                <div style="border: 1px solid #eee; padding: 20px; border-radius: 10px;">
-                    <h3 style="color: #79C2D0;">⚡ Elétrica</h3>
-                    <p style="font-size: 14px;">Manutenção preventiva, quadros de energia e iluminação.</p>
-                </div>
-                <div style="border: 1px solid #eee; padding: 20px; border-radius: 10px;">
-                    <h3 style="color: #79C2D0;">🛡️ Segurança</h3>
-                    <p style="font-size: 14px;">CFTV, Alarmes monitorados e Cercas Elétricas.</p>
-                </div>
+        <div class="titulo-secao">
+            <h1>As Nossas Soluções</h1>
+            <p>Serviços especializados executados por profissionais qualificados.</p>
+        </div>
+
+        <div class="produtos-grid">
+            <div class="produto-card">
+                <i class="fa-solid fa-plug-circle-check"></i>
+                <h2>Engenharia Elétrica</h2>
+                <p>Garantimos a segurança e a eficiência energética do seu imóvel com projetos estruturados e manutenção de alto nível.</p>
+                <ul class="lista-servicos">
+                    <li>Manutenção comercial e residencial</li>
+                    <li>Quadros de comando e energia</li>
+                    <li>Iluminação em LED e projetos luminotécnicos</li>
+                    <li>Adequação às normas técnicas (NR10)</li>
+                </ul>
+            </div>
+
+            <div class="produto-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h2>Segurança Eletrônica</h2>
+                <p>Sistemas integrados para monitorização e proteção contínua do seu património e da sua família.</p>
+                <ul class="lista-servicos">
+                    <li>Sistemas de CFTV HD e IP</li>
+                    <li>Alarmes inteligentes monitorizados</li>
+                    <li>Instalação de Cercas Elétricas</li>
+                    <li>Acesso remoto via telemóvel</li>
+                </ul>
             </div>
         </div>
     </main>
-    <footer>&copy; 2026 VBS Soluções</footer>
+
+    <footer>
+        <h3 style="letter-spacing: 2px;">VBS SOLUÇÕES</h3>
+        <div class="footer-info">
+            <p>Rua Rio Grande do Sul, 204 - Setor Norte 3 - Alta Floresta, MT</p>
+            <p>© 2026 Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
