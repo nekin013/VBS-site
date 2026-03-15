@@ -22,7 +22,7 @@ body {
 
 main { flex: 1; padding: 60px 5%; max-width: 1300px; margin: 0 auto; width: 100%; }
 
-/* --- MENU GLASSMORPHISM --- */
+/* --- MENU --- */
 header { 
     background: var(--menu-bg);
     backdrop-filter: blur(12px);
@@ -59,9 +59,10 @@ nav a.active { color: var(--azul-brand); background: var(--azul-claro); font-wei
 }
 .btn-padrao:hover { transform: translateY(-3px); background: #62aebc; color: white; }
 
-/* --- RODAPÉ --- */
+/* --- RODAPÉ PADRONIZADO --- */
 footer { background: var(--azul-brand); color: white; padding: 40px 20px; text-align: center; margin-top: auto; }
-.footer-info p { font-size: 0.85rem; opacity: 0.8; margin-top: 5px; }
+.footer-info { margin-top: 10px; opacity: 0.8; font-size: 0.85rem; }
+.footer-info p { margin-bottom: 5px; }
 
 @media (max-width: 950px) {
     header { height: auto; padding: 20px; flex-direction: column; gap: 15px; }
