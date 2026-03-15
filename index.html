@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>VBS Soluções</title>
 
@@ -11,34 +13,83 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:linear-gradient(#a8d7df,#6bb8c6);
+overflow-x:hidden;
+}
+
+/* BACKGROUND HEXAGONOS */
+
+.background{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:
+url("background.png"),
+radial-gradient(circle at 20% 30%, #e8e8e8, #dcdcdc);
+
+background-size:cover;
+
+z-index:-3;
+
+}
+
+/* FORMA AZUL FLUIDA */
+
+.blue-wave{
+
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:500px;
+
+background:linear-gradient(135deg,#6bc6d6,#2c8fa5);
+
+clip-path: polygon(
+0 0,
+100% 0,
+100% 60%,
+85% 70%,
+65% 60%,
+45% 75%,
+25% 65%,
+0 80%
+);
+
+z-index:-2;
+
 }
 
 /* MENU */
 
 header{
-background:#6bb8c6;
-padding:15px;
+
 display:flex;
 justify-content:center;
+padding:20px;
+position:relative;
+z-index:2;
+
 }
 
 nav a{
+
 color:white;
 text-decoration:none;
 margin:0 25px;
 font-weight:bold;
 letter-spacing:1px;
-transition:0.3s;
 position:relative;
-}
 
-nav a:hover{
-color:#083a52;
 }
 
 nav a::after{
-content:'';
+
+content:"";
 position:absolute;
 width:0%;
 height:2px;
@@ -46,107 +97,132 @@ background:white;
 left:0;
 bottom:-5px;
 transition:0.3s;
+
 }
 
 nav a:hover::after{
+
 width:100%;
+
 }
 
-/* FUNDO HEXAGONO */
+/* BLOCO DA LOGO */
 
-.bg{
-background: repeating-linear-gradient(
-60deg,
-#e5e5e5,
-#e5e5e5 20px,
-#f0f0f0 20px,
-#f0f0f0 40px
-);
-padding:80px 20px;
+.hero{
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:350px;
+
 }
-
-/* LOGO BOX */
 
 .logo-box{
-max-width:450px;
-margin:auto;
-background:white;
-padding:40px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+background:rgba(255,255,255,0.65);
+
+backdrop-filter:blur(12px);
+
+padding:40px 60px;
+
+border-radius:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+
 text-align:center;
+
 }
 
 .logo-box img{
-max-width:100%;
+
+width:220px;
+
 }
 
 .logo-box h2{
+
 margin-top:15px;
-color:#083a52;
+color:#0b3c4a;
+
 }
 
 /* CARDS */
 
 .cards{
+
+margin-top:80px;
+
 display:flex;
 justify-content:center;
-gap:40px;
-padding:80px 20px;
 flex-wrap:wrap;
+
+gap:30px;
+
+padding-bottom:100px;
+
 }
 
 .card{
-background:rgba(255,255,255,0.25);
-backdrop-filter:blur(5px);
-border-radius:15px;
-padding:30px;
+
 width:260px;
+
+background:rgba(255,255,255,0.25);
+
+backdrop-filter:blur(8px);
+
+border-radius:15px;
+
+padding:30px;
+
 text-align:center;
-color:white;
+
+color:#083a52;
+
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
 transition:0.3s;
+
 }
 
 .card:hover{
-transform:translateY(-5px);
-}
 
-.card h3{
-margin-top:10px;
+transform:translateY(-6px);
+
 }
 
 .icon{
+
 font-size:40px;
-}
 
-/* RESPONSIVO */
-
-@media(max-width:700px){
-
-nav a{
-margin:0 10px;
-font-size:14px;
-}
+margin-bottom:10px;
 
 }
 
 </style>
+
 </head>
 
 <body>
 
+<div class="background"></div>
+
+<div class="blue-wave"></div>
+
 <header>
+
 <nav>
+
 <a href="#">HOME</a>
 <a href="#">PRODUTOS</a>
 <a href="#">CONTATO</a>
 <a href="#">DOWNLOAD</a>
 <a href="#">SOBRE</a>
+
 </nav>
+
 </header>
 
-<div class="bg">
+<section class="hero">
 
 <div class="logo-box">
 
@@ -156,32 +232,48 @@ font-size:14px;
 
 </div>
 
-</div>
+</section>
 
 <section class="cards">
 
 <div class="card">
+
 <div class="icon">📷</div>
-<h3>Câmeras de Segurança</h3>
-<p>Sistemas de monitoramento para residências e empresas.</p>
+
+<h3>Câmeras</h3>
+
+<p>Sistemas completos de monitoramento.</p>
+
 </div>
 
 <div class="card">
+
 <div class="icon">🚪</div>
-<h3>Automação de Portões</h3>
-<p>Controle de portões automáticos com tecnologia moderna.</p>
+
+<h3>Portões Automáticos</h3>
+
+<p>Automação e controle remoto.</p>
+
 </div>
 
 <div class="card">
+
 <div class="icon">🚨</div>
-<h3>Sistemas de Alarme</h3>
-<p>Proteção e segurança para seu patrimônio.</p>
+
+<h3>Alarmes</h3>
+
+<p>Proteção para residências e empresas.</p>
+
 </div>
 
 <div class="card">
+
 <div class="icon">📶</div>
+
 <h3>Controle via App</h3>
-<p>Gerencie dispositivos remotamente pelo celular.</p>
+
+<p>Controle remoto pelo celular.</p>
+
 </div>
 
 </section>
