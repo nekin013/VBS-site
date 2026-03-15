@@ -2,9 +2,8 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VBS Soluções</title>
 
@@ -14,65 +13,52 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 overflow-x:hidden;
+background:#e6e6e6;
 }
 
-/* BACKGROUND HEXAGONOS */
+/* HEXAGONOS */
 
-.background{
+.hex-bg{
 
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
 
 background:
-url("background.png"),
-radial-gradient(circle at 20% 30%, #e8e8e8, #dcdcdc);
+linear-gradient(30deg,#dcdcdc 12%,transparent 12.5%,transparent 87%,#dcdcdc 87.5%,#dcdcdc),
+linear-gradient(150deg,#dcdcdc 12%,transparent 12.5%,transparent 87%,#dcdcdc 87.5%,#dcdcdc),
+linear-gradient(30deg,#dcdcdc 12%,transparent 12.5%,transparent 87%,#dcdcdc 87.5%,#dcdcdc),
+linear-gradient(150deg,#dcdcdc 12%,transparent 12.5%,transparent 87%,#dcdcdc 87.5%,#dcdcdc),
+linear-gradient(60deg,#ececec 25%,transparent 25.5%,transparent 75%,#ececec 75%,#ececec),
+linear-gradient(60deg,#ececec 25%,transparent 25.5%,transparent 75%,#ececec 75%,#ececec);
 
-background-size:cover;
+background-size:80px 140px;
+
+background-position:
+0 0,
+0 0,
+40px 70px,
+40px 70px,
+0 0,
+40px 70px;
 
 z-index:-3;
 
 }
 
-/* FORMA AZUL FLUIDA */
-
-.blue-wave{
-
-position:absolute;
-top:0;
-left:0;
-
-width:100%;
-height:500px;
-
-background:linear-gradient(135deg,#6bc6d6,#2c8fa5);
-
-clip-path: polygon(
-0 0,
-100% 0,
-100% 60%,
-85% 70%,
-65% 60%,
-45% 75%,
-25% 65%,
-0 80%
-);
-
-z-index:-2;
-
-}
-
-/* MENU */
+/* MENU RETO */
 
 header{
 
+background:linear-gradient(90deg,#5fc0cf,#3d9fb3);
+
+padding:18px;
+
 display:flex;
 justify-content:center;
-padding:20px;
+
 position:relative;
-z-index:2;
+z-index:5;
 
 }
 
@@ -80,9 +66,13 @@ nav a{
 
 color:white;
 text-decoration:none;
+
 margin:0 25px;
+
 font-weight:bold;
+
 letter-spacing:1px;
+
 position:relative;
 
 }
@@ -90,12 +80,19 @@ position:relative;
 nav a::after{
 
 content:"";
+
 position:absolute;
+
 width:0%;
+
 height:2px;
+
 background:white;
+
 left:0;
+
 bottom:-5px;
+
 transition:0.3s;
 
 }
@@ -106,24 +103,61 @@ width:100%;
 
 }
 
-/* BLOCO DA LOGO */
+/* AREA AZUL FLUIDA */
 
 .hero{
 
+position:relative;
+
+height:420px;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
-height:350px;
 
 }
 
+.blue-shape{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(135deg,#6bc6d6,#2c8fa5);
+
+clip-path: polygon(
+0 0,
+100% 0,
+100% 70%,
+90% 75%,
+70% 68%,
+50% 80%,
+30% 70%,
+10% 82%,
+0 75%
+);
+
+z-index:-2;
+
+}
+
+/* BLOCO LOGO */
+
 .logo-box{
 
-background:rgba(255,255,255,0.65);
+background:rgba(255,255,255,0.55);
 
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 
-padding:40px 60px;
+padding:40px 70px;
 
 border-radius:20px;
 
@@ -142,7 +176,8 @@ width:220px;
 .logo-box h2{
 
 margin-top:15px;
-color:#0b3c4a;
+
+color:#083a52;
 
 }
 
@@ -153,12 +188,14 @@ color:#0b3c4a;
 margin-top:80px;
 
 display:flex;
+
 justify-content:center;
+
 flex-wrap:wrap;
 
-gap:30px;
+gap:35px;
 
-padding-bottom:100px;
+padding-bottom:120px;
 
 }
 
@@ -166,7 +203,7 @@ padding-bottom:100px;
 
 width:260px;
 
-background:rgba(255,255,255,0.25);
+background:rgba(255,255,255,0.3);
 
 backdrop-filter:blur(8px);
 
@@ -180,13 +217,13 @@ color:#083a52;
 
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
-transition:0.3s;
+transition:0.25s;
 
 }
 
 .card:hover{
 
-transform:translateY(-6px);
+transform:translateY(-7px);
 
 }
 
@@ -204,9 +241,7 @@ margin-bottom:10px;
 
 <body>
 
-<div class="background"></div>
-
-<div class="blue-wave"></div>
+<div class="hex-bg"></div>
 
 <header>
 
@@ -223,6 +258,8 @@ margin-bottom:10px;
 </header>
 
 <section class="hero">
+
+<div class="blue-shape"></div>
 
 <div class="logo-box">
 
@@ -242,7 +279,7 @@ margin-bottom:10px;
 
 <h3>Câmeras</h3>
 
-<p>Sistemas completos de monitoramento.</p>
+<p>Sistemas de monitoramento profissional.</p>
 
 </div>
 
@@ -262,7 +299,7 @@ margin-bottom:10px;
 
 <h3>Alarmes</h3>
 
-<p>Proteção para residências e empresas.</p>
+<p>Proteção residencial e empresarial.</p>
 
 </div>
 
@@ -272,7 +309,7 @@ margin-bottom:10px;
 
 <h3>Controle via App</h3>
 
-<p>Controle remoto pelo celular.</p>
+<p>Gerenciamento pelo celular.</p>
 
 </div>
 
