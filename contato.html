@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato | VBS Soluções</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> <style>
-        .contato-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .grid-contato { display: flex; gap: 30px; align-items: stretch; }
-        .coluna-info { flex: 1; display: flex; flex-direction: column; gap: 15px; }
-        .coluna-mapa { flex: 1.2; }
-        .info-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 5px solid var(--azul-claro); }
-        .info-card i { font-size: 22px; color: var(--azul-brand); margin-bottom: 10px; display: block; }
-        .info-card h3 { color: var(--azul-brand); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 5px; }
-        .social-buttons { display: flex; gap: 10px; }
-        .btn-social { flex: 1; text-align: center; padding: 12px; border-radius: 5px; color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
-        .btn-insta { background: #E1306C; }
-        .btn-face { background: #1877F2; }
-        .btn-whatsapp-fix { background: #25D366; width: 100%; padding: 18px; border-radius: 5px; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; box-shadow: 0 8px 15px rgba(37, 211, 102, 0.2); }
-        .mapa-container { height: 100%; min-height: 500px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; }
-        @media (max-width: 900px) { .grid-contato { flex-direction: column; } }
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .grid-contato { display: flex; gap: 40px; padding: 60px 8%; max-width: 1400px; margin: 0 auto; align-items: stretch; }
+        .coluna-info { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .coluna-mapa { flex: 1.5; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 4px solid white; height: 600px; }
+        
+        .card-contato { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card-contato:hover { transform: translateY(-5px); }
+        .card-contato i { color: var(--azul-claro); font-size: 1.8rem; margin-bottom: 15px; display: block; }
+        .card-contato h3 { color: var(--azul-brand); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        
+        .btn-whats { 
+            background: #25D366; color: white; text-decoration: none; 
+            display: flex; align-items: center; justify-content: center; gap: 12px; 
+            padding: 22px; border-radius: 12px; font-weight: 800; text-transform: uppercase; 
+            transition: 0.3s; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whats:hover { transform: scale(1.03); background: #1ebd57; }
+
+        @media (max-width: 1000px) { .grid-contato { flex-direction: column; } .coluna-mapa { height: 400px; } }
     </style>
 </head>
 <body>
@@ -35,41 +40,39 @@
         </nav>
     </header>
 
-    <main class="contato-section">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h1 style="font-weight: 800; color: var(--azul-brand); font-size: 2.5rem;">Canais de Atendimento</h1>
-            <p>Especialistas em Elétrica e Segurança prontos para te ouvir.</p>
+    <div class="grid-contato">
+        <div class="coluna-info">
+            <h1 style="color: var(--azul-brand); font-weight: 800; font-size: 2.8rem; line-height: 1.2;">Vamos conversar?</h1>
+            <p style="color: #666; margin-bottom: 10px;">Estamos localizados no coração de Alta Floresta.</p>
+            
+            <div class="card-contato">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Endereço</h3>
+                <p>Av. Rio Grande do Sul, 204 - Setor Norte 03<br>Alta Floresta - MT</p>
+            </div>
+
+            <div class="card-contato">
+                <i class="fa-solid fa-clock"></i>
+                <h3>Atendimento Especializado</h3>
+                <p>Segunda a Sexta: 07:30 - 17:30<br>Sábados: 07:30 - 11:00</p>
+            </div>
+
+            <a href="https://wa.me/5566984228702" class="btn-whats">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.8rem;"></i> Abrir Conversa no WhatsApp
+            </a>
         </div>
 
-        <div class="grid-contato">
-            <div class="coluna-info">
-                <div class="info-card">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h3>Localização</h3>
-                    <p>Avenida Rio Grande do Sul, 204 - Setor Norte 03<br>Alta Floresta - MT</p>
-                </div>
-                <div class="info-card">
-                    <i class="fa-solid fa-clock"></i>
-                    <h3>Horário Técnico</h3>
-                    <p>Seg a Sex: 07:30 – 11:00 | 13:30 – 17:30<br>Sábados: 07:30 – 11:00</p>
-                </div>
-                <div class="social-buttons">
-                    <a href="https://www.instagram.com/vbs.solucoes" target="_blank" class="btn-social btn-insta"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    <a href="https://www.facebook.com/share/1C3nBKxMjY/" target="_blank" class="btn-social btn-face"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                </div>
-                <a href="https://wa.me/5566984228702" class="btn-whatsapp-fix"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
-            </div>
-            <div class="coluna-mapa">
-                <div class="mapa-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.456!2d-56.08!3d-9.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNTInMDAuMCJTIDU2wrAwNCcwMC4wIlc!5e0!3m2!1spt-BR!2sbr!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
+        <div class="coluna-mapa">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3902.164843701258!2d-56.067248924948835!3d-9.85228699024599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwNTEnMDguMiJTIDU2wrAwMydmNTIuOCJX!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
         </div>
-    </main>
+    </div>
 
     <footer>
-        <p style="font-weight: 800; letter-spacing: 2px;">VBS SOLUÇÕES</p>
-        <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.6;">© 2026 Alta Floresta - Mato Grosso</p>
+        <p style="font-weight: 800; letter-spacing: 3px;">VBS SOLUÇÕES</p>
+        <p style="font-size: 10px; opacity: 0.5; margin-top: 10px;">Engenharia Elétrica & Segurança Eletrônica</p>
     </footer>
 </body>
 </html>
