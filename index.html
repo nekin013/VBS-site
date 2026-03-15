@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>VBS Soluções</title>
 
@@ -13,22 +13,24 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 overflow-x:hidden;
-background:#e6e6e6;
+background:#e5e5e5;
 }
 
 /* HEXAGONOS */
 
-.hex-bg{
+.hex{
 
-position:fixed;
+position:absolute;
+top:60px;
+left:0;
 width:100%;
-height:100%;
+height:260px;
 
 background:
-linear-gradient(30deg,#dcdcdc 12%,transparent 12.5%,transparent 87%,#dcdcdc 87.5%,#dcdcdc),
-linear-gradient(150deg,#dcdcdc 12%,transparent 12.5%,transparent 87%,#dcdcdc 87.5%,#dcdcdc),
-linear-gradient(30deg,#dcdcdc 12%,transparent 12.5%,transparent 87%,#dcdcdc 87.5%,#dcdcdc),
-linear-gradient(150deg,#dcdcdc 12%,transparent 12.5%,transparent 87%,#dcdcdc 87.5%,#dcdcdc),
+linear-gradient(30deg,#d8d8d8 12%,transparent 12.5%,transparent 87%,#d8d8d8 87.5%,#d8d8d8),
+linear-gradient(150deg,#d8d8d8 12%,transparent 12.5%,transparent 87%,#d8d8d8 87.5%,#d8d8d8),
+linear-gradient(30deg,#d8d8d8 12%,transparent 12.5%,transparent 87%,#d8d8d8 87.5%,#d8d8d8),
+linear-gradient(150deg,#d8d8d8 12%,transparent 12.5%,transparent 87%,#d8d8d8 87.5%,#d8d8d8),
 linear-gradient(60deg,#ececec 25%,transparent 25.5%,transparent 75%,#ececec 75%,#ececec),
 linear-gradient(60deg,#ececec 25%,transparent 25.5%,transparent 75%,#ececec 75%,#ececec);
 
@@ -42,15 +44,15 @@ background-position:
 0 0,
 40px 70px;
 
-z-index:-3;
+z-index:0;
 
 }
 
-/* MENU RETO */
+/* MENU SUPERIOR */
 
 header{
 
-background:linear-gradient(90deg,#5fc0cf,#3d9fb3);
+background:linear-gradient(90deg,#8ad0d6,#4da9bf);
 
 padding:18px;
 
@@ -67,7 +69,7 @@ nav a{
 color:white;
 text-decoration:none;
 
-margin:0 25px;
+margin:0 30px;
 
 font-weight:bold;
 
@@ -80,19 +82,12 @@ position:relative;
 nav a::after{
 
 content:"";
-
 position:absolute;
-
 width:0%;
-
 height:2px;
-
 background:white;
-
 left:0;
-
 bottom:-5px;
-
 transition:0.3s;
 
 }
@@ -103,13 +98,13 @@ width:100%;
 
 }
 
-/* AREA AZUL FLUIDA */
+/* AREA HERO */
 
 .hero{
 
 position:relative;
 
-height:420px;
+height:380px;
 
 display:flex;
 
@@ -119,41 +114,36 @@ align-items:center;
 
 }
 
-.blue-shape{
+/* FORMA AZUL */
+
+.blue{
 
 position:absolute;
 
-top:0;
-
+bottom:-60px;
 left:0;
 
 width:100%;
+height:260px;
 
-height:100%;
+background:linear-gradient(#79c6d3,#5aaec2);
 
-background:linear-gradient(135deg,#6bc6d6,#2c8fa5);
+border-top-left-radius:120px;
+border-top-right-radius:200px;
 
-clip-path: polygon(
-0 0,
-100% 0,
-100% 70%,
-90% 75%,
-70% 68%,
-50% 80%,
-30% 70%,
-10% 82%,
-0 75%
-);
+filter:blur(1px);
 
-z-index:-2;
+z-index:1;
 
 }
 
-/* BLOCO LOGO */
+/* CAIXA LOGO */
 
 .logo-box{
 
-background:rgba(255,255,255,0.55);
+position:relative;
+
+background:rgba(255,255,255,0.65);
 
 backdrop-filter:blur(14px);
 
@@ -164,6 +154,8 @@ border-radius:20px;
 box-shadow:0 20px 40px rgba(0,0,0,0.15);
 
 text-align:center;
+
+z-index:3;
 
 }
 
@@ -185,15 +177,15 @@ color:#083a52;
 
 .cards{
 
-margin-top:80px;
+margin-top:160px;
 
 display:flex;
 
 justify-content:center;
 
-flex-wrap:wrap;
+gap:40px;
 
-gap:35px;
+flex-wrap:wrap;
 
 padding-bottom:120px;
 
@@ -201,37 +193,21 @@ padding-bottom:120px;
 
 .card{
 
-width:260px;
+width:280px;
 
-background:rgba(255,255,255,0.3);
+background:rgba(255,255,255,0.35);
 
 backdrop-filter:blur(8px);
 
-border-radius:15px;
+border-radius:20px;
 
-padding:30px;
+padding:35px;
 
 text-align:center;
 
-color:#083a52;
+color:white;
 
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-
-transition:0.25s;
-
-}
-
-.card:hover{
-
-transform:translateY(-7px);
-
-}
-
-.icon{
-
-font-size:40px;
-
-margin-bottom:10px;
+box-shadow:0 15px 30px rgba(0,0,0,0.15);
 
 }
 
@@ -240,8 +216,6 @@ margin-bottom:10px;
 </head>
 
 <body>
-
-<div class="hex-bg"></div>
 
 <header>
 
@@ -257,9 +231,9 @@ margin-bottom:10px;
 
 </header>
 
-<section class="hero">
+<div class="hex"></div>
 
-<div class="blue-shape"></div>
+<section class="hero">
 
 <div class="logo-box">
 
@@ -269,47 +243,25 @@ margin-bottom:10px;
 
 </div>
 
+<div class="blue"></div>
+
 </section>
 
 <section class="cards">
 
 <div class="card">
 
-<div class="icon">📷</div>
+<h3>Lorem ipsum dolor</h3>
 
-<h3>Câmeras</h3>
-
-<p>Sistemas de monitoramento profissional.</p>
+<p>sit amet, consectetur</p>
 
 </div>
 
 <div class="card">
 
-<div class="icon">🚪</div>
+<h3>Lorem ipsum dolor</h3>
 
-<h3>Portões Automáticos</h3>
-
-<p>Automação e controle remoto.</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">🚨</div>
-
-<h3>Alarmes</h3>
-
-<p>Proteção residencial e empresarial.</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">📶</div>
-
-<h3>Controle via App</h3>
-
-<p>Gerenciamento pelo celular.</p>
+<p>sit amet, consectetur</p>
 
 </div>
 
