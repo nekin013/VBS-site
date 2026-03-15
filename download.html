@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .lista-downloads { display: flex; flex-direction: column; gap: 15px; }
-        .item-download { background: white; padding: 20px 30px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .item-download { background: white; padding: 25px 30px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--azul-claro); }
         .info-down h4 { color: var(--azul-brand); font-size: 1.1rem; }
-        .info-down p { font-size: 0.85rem; color: #777; }
-        .btn-baixar { background: var(--azul-brand); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .btn-baixar:hover { background: var(--azul-claro); }
+        .info-down p { font-size: 0.9rem; color: #666; margin-top: 5px; }
+        .btn-baixar { background: var(--azul-brand); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+        .btn-baixar:hover { background: var(--azul-claro); transform: translateY(-2px); }
+        @media (max-width: 600px) { .item-download { flex-direction: column; text-align: center; gap: 15px; } }
     </style>
 </head>
 <body>
@@ -31,14 +32,14 @@
     <main>
         <div class="titulo-secao">
             <h1>Central de Downloads</h1>
-            <p>Softwares de monitoramento, manuais e apresentações.</p>
+            <p>Softwares de monitorização e materiais institucionais.</p>
         </div>
 
         <div class="lista-downloads">
             <div class="item-download">
                 <div class="info-down">
-                    <h4>Aplicativo de Monitoramento (Android)</h4>
-                    <p>App oficial para visualização de câmeras no celular.</p>
+                    <h4>Aplicação de Monitorização (Android)</h4>
+                    <p>App oficial para visualização de câmaras remotamente.</p>
                 </div>
                 <a href="#" class="btn-baixar"><i class="fa-solid fa-download"></i> Baixar App</a>
             </div>
@@ -46,7 +47,7 @@
             <div class="item-download">
                 <div class="info-down">
                     <h4>Apresentação Institucional VBS</h4>
-                    <p>Arquivo em PDF com nosso portfólio completo.</p>
+                    <p>Ficheiro PDF com o nosso portfólio completo de serviços.</p>
                 </div>
                 <a href="#" class="btn-baixar"><i class="fa-solid fa-file-pdf"></i> Baixar PDF</a>
             </div>
@@ -55,6 +56,10 @@
 
     <footer>
         <h3 style="letter-spacing: 2px;">VBS SOLUÇÕES</h3>
+        <div class="footer-info">
+            <p>Rua Rio Grande do Sul, 204 - Setor Norte 3 - Alta Floresta, MT</p>
+            <p>© 2026 Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
