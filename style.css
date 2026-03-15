@@ -1,13 +1,19 @@
-/* style.css - VBS SOLUÇÕES */
+/* style.css - VBS SOLUÇÕES (Versão Final com Vitrine) */
 :root {
     --azul-brand: #002855;
     --azul-claro: #79C2D0;
     --branco: #ffffff;
     --cinza-fundo: #f4f7f9;
     --menu-bg: rgba(0, 40, 85, 0.95);
+    --whatsapp-green: #25D366;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Montserrat', sans-serif; 
+}
 
 body { 
     background-color: var(--cinza-fundo);
@@ -20,9 +26,15 @@ body {
     min-height: 100vh;
 }
 
-main { flex: 1; padding: 60px 5%; max-width: 1300px; margin: 0 auto; width: 100%; }
+main { 
+    flex: 1; 
+    padding: 60px 5%; 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    width: 100%; 
+}
 
-/* --- MENU --- */
+/* --- MENU (HEADER) --- */
 header { 
     background: var(--menu-bg);
     backdrop-filter: blur(12px);
@@ -32,39 +44,236 @@ header {
     padding: 0 5%; 
     height: 90px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
-    position: sticky; top: 0; z-index: 1000; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
     border-bottom: 2px solid var(--azul-claro);
 }
-.logo-menu img { height: 50px; filter: brightness(0) invert(1); transition: 0.3s; }
-.logo-menu img:hover { transform: scale(1.05); }
 
-nav { display: flex; gap: 8px; }
-nav a { 
-    text-decoration: none; color: rgba(255,255,255,0.7); font-weight: 600; 
-    padding: 10px 18px; text-transform: uppercase; font-size: 12px; 
-    letter-spacing: 1.2px; transition: all 0.3s ease; border-radius: 50px; 
+.logo-menu img { 
+    height: 50px; 
+    filter: brightness(0) invert(1); 
+    transition: 0.3s; 
 }
-nav a:hover { color: var(--branco); background: rgba(255,255,255,0.1); }
-nav a.active { color: var(--azul-brand); background: var(--azul-claro); font-weight: 800; }
 
-/* --- BOTÕES E TÍTULOS --- */
-.titulo-secao { text-align: center; margin-bottom: 50px; }
-.titulo-secao h1 { color: var(--azul-brand); font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; }
-.titulo-secao p { color: #666; font-size: 1.1rem; }
+.logo-menu img:hover { 
+    transform: scale(1.05); 
+}
+
+nav { 
+    display: flex; 
+    gap: 8px; 
+}
+
+nav a { 
+    text-decoration: none; 
+    color: rgba(255,255,255,0.7); 
+    font-weight: 600; 
+    padding: 10px 18px; 
+    text-transform: uppercase; 
+    font-size: 12px; 
+    letter-spacing: 1.2px; 
+    transition: all 0.3s ease; 
+    border-radius: 50px; 
+}
+
+nav a:hover { 
+    color: var(--branco); 
+    background: rgba(255,255,255,0.1); 
+}
+
+nav a.active { 
+    color: var(--azul-brand); 
+    background: var(--azul-claro); 
+    font-weight: 800; 
+}
+
+/* --- TÍTULOS E BOTÕES GERAIS --- */
+.titulo-secao { 
+    text-align: center; 
+    margin-bottom: 50px; 
+}
+
+.titulo-secao h1 { 
+    color: var(--azul-brand); 
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    margin-bottom: 10px; 
+}
+
+.titulo-secao p { 
+    color: #666; 
+    font-size: 1.1rem; 
+}
 
 .btn-padrao {
-    background: var(--azul-claro); color: var(--azul-brand); padding: 15px 35px;
-    border-radius: 50px; text-decoration: none; font-weight: 800; text-transform: uppercase;
-    transition: 0.3s; display: inline-block; box-shadow: 0 5px 15px rgba(121, 194, 208, 0.4);
+    background: var(--azul-claro); 
+    color: var(--azul-brand); 
+    padding: 15px 35px;
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 800; 
+    text-transform: uppercase;
+    transition: 0.3s; 
+    display: inline-block; 
+    box-shadow: 0 5px 15px rgba(121, 194, 208, 0.4);
 }
-.btn-padrao:hover { transform: translateY(-3px); background: #62aebc; color: white; }
 
-/* --- RODAPÉ PADRONIZADO --- */
-footer { background: var(--azul-brand); color: white; padding: 40px 20px; text-align: center; margin-top: auto; }
-.footer-info { margin-top: 10px; opacity: 0.8; font-size: 0.85rem; }
-.footer-info p { margin-bottom: 5px; }
+.btn-padrao:hover { 
+    transform: translateY(-3px); 
+    background: #62aebc; 
+    color: white; 
+}
 
+/* --- VITRINE DE PRODUTOS (PESQUISA E FILTROS) --- */
+.search-container { 
+    text-align: center; 
+    margin-bottom: 30px; 
+}
+
+.search-bar { 
+    width: 100%; 
+    max-width: 500px; 
+    padding: 15px 25px; 
+    border-radius: 50px; 
+    border: 2px solid var(--azul-brand); 
+    font-size: 1rem; 
+    outline: none; 
+    transition: 0.3s;
+}
+
+.search-bar:focus { 
+    box-shadow: 0 0 15px rgba(121, 194, 208, 0.4); 
+}
+
+.filter-container { 
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; 
+    margin-bottom: 40px; 
+    flex-wrap: wrap; 
+}
+
+.filter-btn { 
+    background: white; 
+    border: 1px solid var(--azul-brand); 
+    color: var(--azul-brand); 
+    padding: 8px 20px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
+
+.filter-btn.active, .filter-btn:hover { 
+    background: var(--azul-brand); 
+    color: white; 
+}
+
+/* --- GRID DE PRODUTOS --- */
+.vitrine-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 25px; 
+}
+
+.produto-item { 
+    background: white; 
+    border-radius: 15px; 
+    padding: 20px; 
+    text-align: center; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    transition: 0.3s; 
+    border: 1px solid #eee; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produto-item:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+}
+
+.produto-item img { 
+    width: 100%; 
+    height: 180px; 
+    object-fit: contain; 
+    margin-bottom: 15px; 
+}
+
+.produto-id { 
+    font-size: 0.7rem; 
+    color: #999; 
+    display: block; 
+    margin-bottom: 5px; 
+    text-transform: uppercase;
+}
+
+.produto-nome { 
+    font-weight: 800; 
+    color: var(--azul-brand); 
+    margin-bottom: 10px; 
+    display: block; 
+    min-height: 45px; 
+}
+
+.produto-preco { 
+    font-size: 1.3rem; 
+    color: var(--whatsapp-green); 
+    font-weight: 800; 
+    display: block; 
+    margin-bottom: 15px; 
+}
+
+.btn-adquirir { 
+    background: var(--whatsapp-green); 
+    color: white; 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 8px;
+    padding: 12px; 
+    border-radius: 8px; 
+    font-weight: 700; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+}
+
+.btn-adquirir:hover { 
+    background: #1ebd57; 
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+footer { 
+    background: var(--azul-brand); 
+    color: white; 
+    padding: 40px 20px; 
+    text-align: center; 
+    margin-top: auto; 
+}
+
+.footer-info { 
+    margin-top: 10px; 
+    opacity: 0.8; 
+    font-size: 0.85rem; 
+}
+
+.footer-info p { 
+    margin-bottom: 5px; 
+}
+
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 950px) {
-    header { height: auto; padding: 20px; flex-direction: column; gap: 15px; }
-    nav { flex-wrap: wrap; justify-content: center; }
+    header { 
+        height: auto; 
+        padding: 20px; 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    nav { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
 }
