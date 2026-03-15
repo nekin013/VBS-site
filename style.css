@@ -4,7 +4,7 @@
     --azul-claro: #79C2D0;
     --branco: #ffffff;
     --cinza-fundo: #f4f7f9;
-    --transparencia: rgba(0, 40, 85, 0.95);
+    --menu-bg: rgba(0, 40, 85, 0.95);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
@@ -14,66 +14,55 @@ body {
     background-image: radial-gradient(#d1d9e0 0.8px, transparent 0.8px);
     background-size: 24px 24px;
     color: #333; 
-    line-height: 1.6;
 }
 
-/* --- NOVO MENU ULTRA MODERNO --- */
+/* --- MENU ULTRA MODERNO --- */
 header { 
-    background: var(--transparencia);
-    backdrop-filter: blur(10px); /* Efeito de vidro */
+    background: var(--menu-bg);
+    backdrop-filter: blur(12px);
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
     padding: 0 8%; 
-    height: 80px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    height: 90px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
     position: sticky; top: 0; z-index: 1000; 
     border-bottom: 2px solid var(--azul-claro);
 }
 
-.logo-menu img { height: 50px; width: auto; filter: brightness(0) invert(1); }
+.logo-menu img { height: 55px; width: auto; filter: brightness(0) invert(1); }
 
-nav { display: flex; height: 100%; }
+nav { display: flex; gap: 10px; }
 
 nav a { 
     text-decoration: none; 
-    color: rgba(255,255,255,0.8); 
+    color: rgba(255,255,255,0.7); 
     font-weight: 600; 
-    padding: 0 20px; 
-    display: flex;
-    align-items: center;
+    padding: 12px 20px; 
     text-transform: uppercase; 
     font-size: 12px; 
-    letter-spacing: 1.5px; 
-    transition: all 0.4s ease;
-    position: relative;
-}
-
-/* Efeito de linha que cresce ao passar o mouse */
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: var(--azul-claro);
+    letter-spacing: 1.2px; 
     transition: all 0.3s ease;
-    transform: translateX(-50%);
+    border-radius: 50px; /* Estilo cápsula */
 }
 
-nav a:hover { color: var(--branco); }
-nav a:hover::after { width: 100%; }
+nav a:hover { 
+    color: var(--branco); 
+    background: rgba(255,255,255,0.1);
+}
 
-/* Estilo para a Página Ativa */
-nav a.active { color: var(--azul-claro); background: rgba(255,255,255,0.05); }
-nav a.active::after { width: 100%; }
+/* Página Ativa - Destaque em cápsula azul claro */
+nav a.active { 
+    color: var(--azul-brand); 
+    background: var(--azul-claro); 
+    font-weight: 800;
+}
 
-/* --- RODAPÉ --- */
+/* --- FOOTER PADRONIZADO --- */
 footer { background: var(--azul-brand); color: white; padding: 50px 20px; text-align: center; }
 
-@media (max-width: 900px) {
-    header { height: auto; padding: 20px; flex-direction: column; gap: 15px; }
-    nav { gap: 5px; }
-    nav a { padding: 10px; font-size: 10px; }
+@media (max-width: 950px) {
+    header { height: auto; padding: 20px; flex-direction: column; gap: 20px; }
+    nav { flex-wrap: wrap; justify-content: center; gap: 5px; }
+    nav a { padding: 8px 15px; font-size: 10px; }
 }
