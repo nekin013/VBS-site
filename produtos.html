@@ -33,11 +33,19 @@
         <div class="filter-container">
             <button class="filter-btn active" onclick="filtrarCategoria('todos')">Todos</button>
             <button class="filter-btn" onclick="filtrarCategoria('promocao')">🔥 Promoção</button>
-            <button class="filter-btn" onclick="filtrarCategoria('cameras')">Câmeras</button>
-            <button class="filter-btn" onclick="filtrarCategoria('portoes')">Portões</button>
+            <button class="filter-btn" onclick="filtrarCategoria('controles')">Controles</button>
+            <button class="filter-btn" onclick="filtrarCategoria('motores')">Motores</button>
+            <button class="filter-btn" onclick="filtrarCategoria('cameras-wifi')">Câmeras Wi-Fi</button>
+            <button class="filter-btn" onclick="filtrarCategoria('cameras-analogicas')">Câmeras Analogicas</button>
+            <button class="filter-btn" onclick="filtrarCategoria('gravadores')">Gravadores</button>
+            <button class="filter-btn" onclick="filtrarCategoria('armazenamento')">Armazenamento</button>
+            <button class="filter-btn" onclick="filtrarCategoria('centrais')">Centrais</button>
+            <button class="filter-btn" onclick="filtrarCategoria('baterias')">Baterias</button>
+            <button class="filter-btn" onclick="filtrarCategoria('fontes')">Fontes</button>
+            <button class="filter-btn" onclick="filtrarCategoria('nobreak')">Nobreak</button>
             <button class="filter-btn" onclick="filtrarCategoria('rossi')">Rossi</button>
             <button class="filter-btn" onclick="filtrarCategoria('ppa')">PPA</button>
-            <button class="filter-btn" onclick="filtrarCategoria('garen')">Garen</button>
+            <button class="filter-btn" onclick="filtrarCategoria('intelbras')">Intelbras</button>
         </div>
 
         <div id="vitrineGrid" class="vitrine-grid"></div>
@@ -53,14 +61,81 @@
 
     <script>
         // ==========================================================
-        //  PARTE FÁCIL: ADICIONE SEUS PRODUTOS AQUI ABAIXO
+        //  ADICIONAR PRODUTOS AQUI ABAIXO
         // ==========================================================
         const produtos = [
-            { id: '#00001', nome: 'Controle Remoto Rossi', foto: 'img/controle-rossi.png', preco: 'R$ 45,00', categoria: 'rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
-            { id: '#00002', nome: 'Câmera Intelbras Dome', foto: 'img/camera-dome.png', preco: 'R$ 180,00', categoria: 'cameras', link: 'https://wa.me/p/6397304540314893/556684228702' },
-            { id: '#00003', nome: 'Motor PPA DZ Rio 1/4', foto: 'img/motor-ppa.png', preco: 'R$ 550,00', categoria: 'ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
-            { id: '#00004', nome: 'Kit Portão Garen Fit', foto: 'img/garen-fit.png', preco: 'R$ 499,00', categoria: 'garen promocao', link: 'https://wa.me/p/6397304540314893/556684228702' },
-            // Basta copiar a linha acima e mudar os dados para adicionar mais!
+            // Controles
+            { id: '#00001', nome: 'Controle Rossi TX HCS', foto: 'img/pdt-controle-rossi-tx-hcs.png', preco: 'R$ 80,00', categoria: 'controles motores rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00002', nome: 'Controle Rossi NTX HCS', foto: 'img/pdt-controle-rossi-ntx-hcs.png', preco: 'R$ 80,00', categoria: 'controles motores rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00003', nome: 'Controle PPA TOK', foto: 'img/pdt-controle-ppa-tok.png', preco: 'R$ 80,00', categoria: 'controles motores ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00004', nome: 'Controle PPA ZAP POP', foto: 'img/pdt-controle-ppa-zap-pop.png', preco: 'R$ 80,00', categoria: 'controles motores ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00005', nome: 'Controle PPA Citrox Dual Gate', foto: 'img/pdt-controle-ppa-citrox-dual-gate.png', preco: 'R$ 80,00', categoria: 'controles motores ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00006', nome: 'Controle Clonador Type 1K', foto: 'img/pdt-controle-clonador-type-1.png', preco: 'R$ 80,00', categoria: 'controles motores', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00007', nome: 'Controle Clonador Type 2', foto: 'img/pdt-controle-clonador-type-1.png', preco: 'R$ 80,00', categoria: 'controles motores', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Motores
+            { id: '#00008', nome: 'Motor Rossi DZ NANO', foto: 'img/pdt-motor-rossi-dz-nano.png', preco: 'R$ 785,00', categoria: 'motores rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00009', nome: 'Motor Rossi DZ4', foto: 'img/pdt-motor-rossi-dz4.png', preco: 'R$ 785,00', categoria: 'motores rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00010', nome: 'Motor PPA Stark', foto: 'img/pdt-motor-ppa-stark.png', preco: 'R$ 785,00', categoria: 'motores ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00011', nome: 'Motor PPA Rio', foto: 'img/pdt-motor-ppa-rio.png', preco: 'R$ 785,00', categoria: 'motores ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Câmeras Wi-Fi
+            { id: '#00012', nome: 'Câmera Wi-Fi Intelbras', foto: 'img/pdt-camera-wifi-intelbras.png', preco: 'R$ 800,00', categoria: 'cameras-wifi intelbras', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Câmeras Analogicas
+            { id: '#00013', nome: 'Câmera Analogica Intelbras', foto: 'img/pdt-camera-analogica-intelbras.png', preco: 'R$ 800,00', categoria: 'cameras-analogicas intelbras', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Gravadores
+            { id: '#00014', nome: 'Gravador Intelbras DVR', foto: 'img/pdt-gravador-intelbras-dvr.png', preco: 'R$ 1000,00', categoria: 'gravadores intelbras', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Armazenamento
+            { id: '#00015', nome: 'HD WD Purple 500GB', foto: 'img/pdt-hd-wd-purple-500gb.png', preco: 'R$ 300,00', categoria: 'gravadores armazenamento', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00016', nome: 'HD WD Purple 1TB', foto: 'img/pdt-hd-wd-purple-1tb.png', preco: 'R$ 500,00', categoria: 'gravadores armazenamento', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00017', nome: 'HD WD Purple 2TB', foto: 'img/pdt-hd-wd-purple-2tb.png', preco: 'R$ 600,00', categoria: 'gravadores armazenamento', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00018', nome: 'HD WD Purple 4TB', foto: 'img/pdt-hd-wd-purple-4tb.png', preco: 'R$ 700,00', categoria: 'gravadores armazenamento', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00019', nome: 'SD CARD WD Purple 32GB', foto: 'img/pdt-sd-card-wd-purple-32gb.png', preco: 'R$ 80,00', categoria: 'camera-wifi armazenamento', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00020', nome: 'SD CARD WD Purple 64GB', foto: 'img/pdt-sd-card-wd-purple-64gb.png', preco: 'R$ 90,00', categoria: 'camera-wifi armazenamento', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00021', nome: 'SD CARD WD Purple 128GB', foto: 'img/pdt-sd-card-wd-purple-128gb.png', preco: 'R$ 100,00', categoria: 'camera-wifi armazenamento', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00022', nome: 'SD CARD WD Purple 256GB', foto: 'img/pdt-sd-card-wd-purple-256gb.png', preco: 'R$ 110,00', categoria: 'camera-wifi armazenamento', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Centrais
+            { id: '#00023', nome: 'Central', foto: 'img/pdt-central.png', preco: 'R$ 250,00', categoria: 'motores centrais', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Fontes
+            { id: '#00024', nome: 'Fonte Colmeia 12V 1A', foto: 'img/pdt-fonte-colmeia-12v-1a.png', preco: 'R$ 100,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00025', nome: 'Fonte Colmeia 12V 2A', foto: 'img/pdt-fonte-colmeia-12v-2a.png', preco: 'R$ 150,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00026', nome: 'Fonte Colmeia 12V 3A', foto: 'img/pdt-fonte-colmeia-12v-3a.png', preco: 'R$ 200,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00027', nome: 'Fonte de Tomada 12V 1A', foto: 'img/pdt-fonte-de-tomada-12v-1a.png', preco: 'R$ 100,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00028', nome: 'Fonte de Tomada 12V 2A', foto: 'img/pdt-fonte-de-tomada-12v-2a.png', preco: 'R$ 150,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00029', nome: 'Fonte de Tomada 12V 3A', foto: 'img/pdt-fonte-de-tomada-12v-3a.png', preco: 'R$ 200,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00030', nome: 'Fonte para CFTV 12V 1A', foto: 'img/pdt-fonte-para-cftv-12v-1a.png', preco: 'R$ 100,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00031', nome: 'Fonte para CFTV 12V 2A', foto: 'img/pdt-fonte-para-cftv-12v-2a.png', preco: 'R$ 150,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00032', nome: 'Fonte para CFTV 12V 3A', foto: 'img/pdt-fonte-para-cftv-12v-3a.png', preco: 'R$ 200,00', categoria: 'fontes', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Nobreak
+            { id: '#00033', nome: 'Nobreak 600VA Intelbras', foto: 'img/pdt-nobreak-600va-intelbras.png', preco: 'R$ 400,00', categoria: 'nobreak intelbras', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Baterias
+            { id: '#00034', nome: 'Bateria 12V 7Ah VRLA', foto: 'img/pdt-bateria-12v-7ha-vrla.png', preco: 'R$ 150,00', categoria: 'baterias', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00035', nome: 'Bateria 12V A23', foto: 'img/pdt-bateria-12v-s23.png', preco: 'R$ 10,00', categoria: 'baterias', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00036', nome: 'Bateria 12V A27', foto: 'img/pdt-bateria-12v-a27.png', preco: 'R$ 10,00', categoria: 'baterias', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00037', nome: 'Bateria 3V CR2032', foto: 'img/pdt-bateria-3v-cr2032.png', preco: 'R$ 10,00', categoria: 'baterias', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Outros
+            { id: '#00038', nome: 'Imã Com Suporte Rossi', foto: 'img/pdt-ima-rossi.png', preco: 'R$ 25,00', categoria: 'motores rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00039', nome: 'Imã Com Suporte PPA', foto: 'img/pdt-ima-ppa.png', preco: 'R$ 25,00', categoria: 'motores ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00040', nome: 'Cremelheira Gomo Nylon', foto: 'img/pdt-cremalheira-gomo-nylon.png', preco: 'R$ 10,00', categoria: 'motores', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00041', nome: 'Cremelheira 1M Nylon', foto: 'img/pdt-cremalheira-gomo-nylon.png', preco: 'R$ 40,00', categoria: 'motores', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00042', nome: 'Cremelheira 1,5M Nylon', foto: 'img/pdt-cremalheira-1m5-nylon.png', preco: 'R$ 70,00', categoria: 'motores', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00043', nome: 'Capa Motor Rossi DZ NANO', foto: 'img/pdt-capa-motor-rossi-dz-nano.png', preco: 'R$ 30,00', categoria: 'motores rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00044', nome: 'Capa Motor Rossi DZ4', foto: 'img/pdt-capa-motor-rossi-dz4.png', preco: 'R$ 30,00', categoria: 'motores rossi', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00045', nome: 'Capa Motor PPA DZ Stark', foto: 'img/pdt-capa-motor-ppa-dz-stark.png', preco: 'R$ 30,00', categoria: 'motores ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00046', nome: 'Capa Motor PPA DZ Rio', foto: 'img/pdt-capa-motor-ppa-dz-rio.png', preco: 'R$ 30,00', categoria: 'motores ppa', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00047', nome: 'Capacitor 12µF 250VAC', foto: 'img/pdt-capacitor-12uf-250vac.png', preco: 'R$ 50,00', categoria: 'motores', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00048', nome: 'Capacitor 30µF 250VAC', foto: 'img/pdt-capacitor-30uf-250vac.png', preco: 'R$ 70,00', categoria: 'motores', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            { id: '#00049', nome: 'Capacitor 35µF 250VAC', foto: 'img/pdt-capacitor-35uf-250vac.png', preco: 'R$ 80,00', categoria: 'motores', link: 'https://wa.me/p/6397304540314893/556684228702' },
+            
+            // Basta copiar a linha acima e mudar os dados para adicionar mais
         ];
         // ==========================================================
 
